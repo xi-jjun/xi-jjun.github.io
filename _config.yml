@@ -1,7 +1,6 @@
 # Site settings
 title:          xi-jjun's 개발 블로그
 description:    "개발자가 되고 싶어요"
-baseurl:        "/tale"
 url:            "https://xi-jjun.github.io"
 
 # Google Analytics

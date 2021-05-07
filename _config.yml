@@ -31,6 +31,7 @@ plugins:
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
+theme:      tale
 permalink:      /:year-:month-:day/:title
 paginate:       5
 
@@ -39,3 +40,4 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
 # Disqus (Set to your disqus id)
 disqus:         jekyll-tale
+

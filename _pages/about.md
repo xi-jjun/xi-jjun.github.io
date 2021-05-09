@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "About"
-author: "Chester"
+title: "자기소개"
+author: "xi-jjun"
 permalink: /about/
 ---
 

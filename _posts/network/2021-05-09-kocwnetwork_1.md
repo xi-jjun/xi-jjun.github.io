@@ -47,7 +47,7 @@ computer network 에서는 컴퓨터와 컴퓨터가 router에 의해 통신을 
 
 
 
-#### Network edge : connection-oriented service
+### Network edge : connection-oriented service
 
 Network edge : Host(우리 desktop, laptop)들이 위치. wep application이 돌아가는 곳.
 
@@ -55,7 +55,7 @@ Network edge : Host(우리 desktop, laptop)들이 위치. wep application이 돌
 
 
 
-##### - Network edge 구성요소
+### - Network edge 구성요소
 
 Client : 본인(?)이 원할 때 link에 연결해서 서버로부터 정보를 가져오는 구성요소.
 
@@ -67,13 +67,13 @@ Server : client의 요청을 기다리는 구성요소.
 
 
 
-##### - Network edge : connection-oriented service
+### - Network edge : connection-oriented service
 
 모든 기능적 메커니즘이 network edge에 있다. TCP가 connection-oriented service를 제공한다.
 
 
 
-###### TCP(Transmission Control Protocol)
+### TCP(Transmission Control Protocol)
 
 1) Reliable, in-order byte stream data transfer
 
@@ -89,7 +89,7 @@ Sender와 receiver 사이 중간 **네트워크 상황에 맞춰** 조절하며 
 
 
 
-###### UDP(User Datagram Protocol)
+### UDP(User Datagram Protocol)
 
 1) Connectionless
 
@@ -100,29 +100,19 @@ Sender와 receiver 사이 중간 **네트워크 상황에 맞춰** 조절하며 
 4) No congestion control
 
 
-
+<hr>
 Q1) 신뢰성도 없고, 어떠한 control 기능도 제공 안하는 UDP는 왜 있는가?
 
 A1) "굳이" reliable 할 필요가 없을 때 쓴다. Ex) 음성통화같은 경우, data가 몇개 유실 되어도 모르기 때문이다.
-
-
-
+<hr>
 Q2) 둘의 차이점은?
-
 A2) UDP가 TCP에 비해 빠르다. 하지만 data가 손실된다는 점에서 그 속도는 무의미하다. TCP는 UDP에 비해 **비용**이 더 많이 든다.
-
-
-
+<hr>
 Q3) "TCP는 UDP에 비해 **비용**이 더 많이 든다" <- 비용이 정확하게 무엇인가?
-
 A3) 컴퓨팅 리소스와 네트워킹 리소스이다.
-
-
-
+<hr>
 Q4) 근데 Protocol이 무엇인가...?
-
 A4) **통신 규약**. 컴퓨터나 원거리 통신 장비 사이에서 메시지를 주고 받는 양식과 규칙의 체계.(출처:위키피디아)
-
 => 비유를 하자면 소통을 하기위한 하나의 '약속' 이라고 할 수 있다. 말하는 방식? 정도. 두 사람이 서로 말이 안통하면 소통이 안된다. 따라서 두 장비 사이에 protocol이 맞지 않으면 통신이 안된다.
 
 Ex1) 잘못된 규약
@@ -140,20 +130,19 @@ B: 네 안녕하세요. 반갑습니다.
 A: 그럼 이제 우리 통신할까요?
 
 B: 네.
-
 <hr>
 
-#### Network core
+### Network core
 
 Router들의 집합. Data는 2가지 방식으로 network를 통해 전달이 된다.
-
+<hr>
 Q5) router가 도대체 무엇인가??
 
 A5) 네트워크 중심부에서 Host(우리)가 보내는 메세지를 받아서 목적지까지 전달해주는 역할.
+<hr>
 
 
-
-##### - Circuit switching
+### - Circuit switching
 
 출발지~목적지까지 data가 갈 길을 미리 정하고, 특정 사용자만이 사용할 수 있게 만들어 놓은 것.(예전 유선전화망)
 
@@ -169,7 +158,7 @@ Router의 일부분을 사용자들에게 열어놓은 것이다.
 
 
 
-##### - Packet switching
+### - Packet switching
 
 Router에 들어오는 packet의 정보(목적지)를 본 후, 정보에 알맞은 방향으로 전송하는 방법.(인터넷에서 사용하는 방식)
 
@@ -187,7 +176,7 @@ Ex) 네x버 기사를 클릭하고 한참 본 뒤에 네x버 만화 클릭.
 
 
 
-###### - Packet switching  : Delay
+### - Packet switching  : Delay
 
 ![delay1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/delay1.png?raw=True)
 
@@ -202,13 +191,12 @@ Ex) 네x버 기사를 클릭하고 한참 본 뒤에 네x버 만화 클릭.
 4. Propagation delay : 다음 router 2로 전송하는데 걸리는 시간이다.
 
    
-
+<hr>
 Q6) Packet이 무엇인가?
 
 A6) data, bit의 집합. data의 형식화된 블록. 보내고자 하는 메시지가 담긴 편지봉투. Network layer에서 data의 전송단위.
 
-
-
 Q7) Queue에 packet으로 가득하면 어떻게 되냐?
 
 A7) Packet loss가 일어난다. 그리고 그러한 loss가 일어날 때 TCP가 다시 packet을 재전송한다.
+<hr>

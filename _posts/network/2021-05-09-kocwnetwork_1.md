@@ -199,4 +199,8 @@ A6) data, bit의 집합. data의 형식화된 블록. 보내고자 하는 메시
 Q7) Queue에 packet으로 가득하면 어떻게 되냐?
 
 A7) Packet loss가 일어난다. 그리고 그러한 loss가 일어날 때 TCP가 다시 packet을 재전송한다.
-<hr>
+
+<hr> 
+
+
+

@@ -193,9 +193,9 @@ A5) 네트워크 중심부에서 Host(우리)가 보내는 메세지를 받아�
 
    => packet의 길이가 짧고, link의 bandwidth가 클수록 짧아진다.
 
-4. Propagation delay : 다음 router 2로 전송하는데 걸리는 시간이다.
+4. Propagation delay : 다음 router 2로 전송하는데 걸리는 시간이다. <br>
 
-<p>	</p>
+<p>	</p> <br>
 
 <hr>
 Q6) Packet이 무엇인가?

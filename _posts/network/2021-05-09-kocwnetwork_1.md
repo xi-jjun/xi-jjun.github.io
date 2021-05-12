@@ -41,7 +41,7 @@ computer network 에서는 컴퓨터와 컴퓨터가 router에 의해 통신을 
 
 그렇다면 네트워크는 무엇으로 이뤄져 있을까? 아까 말한 컴퓨터와 Router??
 
-<img src="/home/xi_jjun/workspace/develop/xi-jjun.github.io/_posts/network/img/image-20210510011115849.png" alt="image-20210510011115849" style="zoom:67%;" />
+<img src="https://github.com/xi-jjun/xi-jjun.github.io/tree/master/_posts/network/img/network-all.png" alt="network-all" style="zoom:67%;" />
 
 네트워크는 위 사진처럼 core(내부)에는 Router가, edge에는 Host(우리 컴퓨터들)이 있다.
 

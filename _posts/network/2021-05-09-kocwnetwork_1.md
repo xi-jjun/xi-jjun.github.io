@@ -179,7 +179,7 @@ A5) 네트워크 중심부에서 Host(우리)가 보내는 메세지를 받아�
 
 ​		=> 왜? 정해져 있는 bandwidth에서 사용자가 많아질 수록 한번에 active하는 사용자의 수가 증가할 확률이 크기 때문이다.
 
-<p></p>
+<br>
 
 ### - Packet switching  : Delay
 
@@ -195,7 +195,7 @@ A5) 네트워크 중심부에서 Host(우리)가 보내는 메세지를 받아�
 
 4. Propagation delay : 다음 router 2로 전송하는데 걸리는 시간이다. <br>
 
-<p>	</p> <br>
+<br>
 
 <hr>
 Q6) Packet이 무엇인가?

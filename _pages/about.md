@@ -15,5 +15,7 @@ permalink: /about/
 
 * [Github](https://github.com/xi-jjun) (초라합니다..)
 
+<br>
 
+Github 블로그를 선택한 이유는 어차피 나중에 포트폴리오를 제작할 때에 github에 저의 자료들을 올려야 한다고 들었고, 그럴거면 진입장벽이 좀 높아도 github과 관련있는 것을 선택하고 싶었습니다.
 

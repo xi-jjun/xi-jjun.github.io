@@ -13,11 +13,7 @@ permalink: /about/
   * rlawowns97@naver.com (가장 많이 봄)
   * rlawowns97@gmail.com (꽤 많이 봄)
 
-* github
-  * https://github.com/xi-jjun (초라합니다..)
+* [Github](https://github.com/xi-jjun) (초라합니다..)
 
-## Contribute
 
-Feel free to create an issue or make a pull request on [GitHub](https://github.com/chesterhow/tale).
 
-Thanks for reading!

@@ -39,7 +39,7 @@ HTML과 CSS로 만들어본 숙제이다.
 
 * 해결방법
   * 처음에는 "html 줄바꿈 방지" 라고 검색했는데 자꾸 `white-space: nowrap;` 만 나오고, 원하는 결과는 안나와서 당혹스러웠다.
-  * 결국 다른 웹사이트 랜점으로 inspect해서 `<span>`이 줄바꿈 없이 문자를 출력하고 있음을 발견했었다.
+  * 결국 다른 웹사이트를 랜덤으로 inspect해서 `<span>`이 줄바꿈 없이 문자를 출력하고 있음을 발견했었다.
 
 ```html
 <span class="product1">IMAC m1</span>

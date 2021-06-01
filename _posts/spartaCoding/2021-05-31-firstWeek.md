@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sparta Coding - 1"
+title: "Sparta Coding(왕초보시작반) - 1"
 author: "xi-jjun"
 tags: spartaCoding
 ---

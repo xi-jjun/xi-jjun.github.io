@@ -2,7 +2,7 @@
 layout: post
 title: "Sparta Coding(왕초보시작반) - 1"
 author: "xi-jjun"
-tags: spartaCoding
+tags: SpartaCoding
 ---
 
 # 공부를 시작하며

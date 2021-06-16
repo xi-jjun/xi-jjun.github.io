@@ -37,30 +37,66 @@ Java를 주력 언어로 선택할 것이기 때문에 저번에 들었던 <왕�
 
 2. 네이버 서버는 요청한 HTML을 우리에게 준다 -> response
 
+이렇게 request와 response으로 이뤄지는 프로토콜이 바로 HTTP 이다.
+
 <br>
 
-## Java 기초 문법
+### 웹에서 데이터만 받을 때(HTML은 안받고)
 
-public static void main 에서 메소드 쓸려면 static을 모든 메서드에 붙여줘야 한다 왜???
+보통 영화 티켓을 사는 페이지로 이동하게 되면 해당 HTML을 서버에서 받아오게 되고, 브라우저는 HTML을 우리에게 화면으로 보여준다. 그리고 티켓을 예매하기 위해 자리를 고를 때 내가 고른 자리는 골랐다고 '표시'가 돼야 한다. 하지만 HTML상에서 표시를 하려면 '요청(request)'가 돼야 하는데 요청을 하려면 새로고침이 돼야 한다. 그렇게 매번 사소한 몇가지 때문에 새로고침을 할 수는 없기에 데이터만 받아오는 것이다.
 
+![spartaSpring1_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/spartaCoding/img/spartaSpring1_2.png?raw=True){: width="70%" height="30%"}
 
+위 같은 방식으로 서버 DB에서 '데이터'만 받아와서 HTML을 업데이트 시킨다. 이렇게 되면 굳이 HTML 전부를 다시 받아올 필요 없이 우리가 필요한 데이터만 받아와서 바로 반영할 수가 있다.
+
+<br>
+
+![spartaSpring1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/spartaCoding/img/spartaSpring1_3.png?raw=True){: width="60%" height="47%"}
+
+<sub>JSON format</sub>
+
+웹에서는 JSON 형식으로 데이터를 주고 받는다.
+
+<br>
+
+### JSON(JavaScript Object Notation)
+
+> JavaScript 객체문법을 따르는 문자 기반의 데이터 포맷 ([출처](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON))
+
+* JavaScript 객체문법과 매우 유사하지만 JavaScript가 아니더라도 JSON을 읽고 쓸 수 있는 기능이 다수의 프로그래밍 환경에서 제공된다.
+* JSON은 문자열 형태로 존재. 네트워크를 통해 전송할 때 아주 유용. 데이터에 억세스하기 위해서는 네이티브 JSON 객체로 변환돼야 한다.
+* Javascript 프로그램에서 로드하고 점/브라켓 표현법을 통해 객체 내 데이터에 접근할 수 있다.
+
+Q1) 네이티브 JSON 객체로 변환한다는 것이 뭔 말이냐?
+
+A1) 문자열에서 네이티브 객체로 변환하는 것은 파싱(Parsing)이라고 한다.
+
+Q2) Parsing은 무엇이냐?
+
+A2) 일련의 문자열을 의미있는 token으로 분해하고 이들로 이루어진 parse tree를 만드는 과정. 향후 parsing에 대한 포스팅을 따로 해서 다루도록 하겠다. 찾다가 너무 많았다.
+
+<br>
+
+### Spring
+
+요청에 따라 눈에 보이는 것들 또는 데이터를 제공해주는 스프링은 "서버"를 담당한다. 그리고 스프링은 자바 언어 바탕으로 만드는 것이다. 본 강의에서는 스프링으로 서버를 만드는 것이 목적이다.
+
+<br>
+
+## 그 외
 
 class = 빵틀
 
 Instance = 빵
 
-this를 언제 쓰는지?
-
-public private 에서 왜 굳이 setter를 쓰ㅡㄴ건가? 그냥 바꾸는거랑 뭔 차이가 있는건지?
-
--> 조건을 줄 수 있어서 그런가...?
-
-
-
-REST : 서버의 응답이 json형태인 것. HTML CSS가 아닌 데이터만 주고받음
+REST : 서버의 응답이 json형태인 것. HTML CSS가 아닌 데이터만 주고받음. 향후 더 정확하게 다뤄봐야겠다.
 
 browser에서 요청하는 것을 GET
 
-
-
 Gradle 배포할 때와 라이브러리 가져올 때 쓴다
+
+<br>
+
+## 1주차 후기
+
+웹개발 종합반처럼 빨리빨리 진행 못하는 부분들이 많았다. 그리고 기말고사 기간이었기 때문에 졸업작품 만들랴 논문 쓰랴 하는 외부적인 것들도 진행을 많이 막았다. 기본적으로 Intellij IDEA라는 새로운 개발툴을 사용하는 점에 있어서도 매우 낯설었다. vscode처럼 간단하지가 않았었다. 그래도 최근에 Intellij IDEA라는 툴을 많이 쓴다고 들었기에 이런 트랜드(?)를 따라가게 해주는 강의인 것 같아서 좋았다.

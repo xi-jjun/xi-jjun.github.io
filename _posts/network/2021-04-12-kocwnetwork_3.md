@@ -71,7 +71,7 @@ Transport layer라면 기본적으로 제공해야 하는 기능이다.
 
 Transport layer에서 데이터의 단위는 segment형태이다. 
 
-(2) :  Sender의 모든 layer를 거치고, router를 지나 Receiver 측의 layer를 거쳐서 목적지(dest port)에 도달한다. Transport layer에 수많은 segment들을 알맞은 목적지 socket에 보내기 위해 Demultiplexing을 한다.
+(2) :  Sender의 모든 layer를 거치고, router를 지나 Receiver 측의 layer를 거쳐서 목적지(dest port)에 도달한다. Transport layer에 수많은 socket 중 알맞은 곳에 segment들을 보내기 위해 Demultiplexing을 한다.
 
 * 여기서 알맞은 목적지를 아는 방법  : Segment의 HEADER영역을 보면, 어떤 socket으로 갈지 알 수 있다.
 
@@ -108,7 +108,7 @@ P3에서 보낸 데이터와 P4에서 보낸 데이터가 같은 socket으로 �
 
 따라서 source(보내는 측)의 IP, Port번호에는 상관없이 목적지의 IP, Port가 packet이 어디로 갈지 정한다.
 
-> 해당 socket과 연결된 많은 client들이 있다. 이건 누구와도 연결되어 있는 상태가 아니므로 "Connectionless"라 한다.
+> 해당 socket(P1)과 연결된 많은 client들이 있다. 이건 누구와도 연결되어 있는 상태가 아니므로 "Connectionless"라 한다.
 
 아무나 다 올 수 있는 것은 연결이 아니다.
 

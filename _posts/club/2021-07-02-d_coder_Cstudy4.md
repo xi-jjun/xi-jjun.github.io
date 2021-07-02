@@ -320,6 +320,8 @@ int main(void) {
 
 나머지 경우에 대해서는 안만들어도 된다.(`Yes, No`이외의 입력은 없을 거라는 가정 )
 
+**첫번째 힌트**를 주자면, malloc선언과 struct pointer 선언 때에는 [동빈나 유투브 00:00~7:22](https://www.youtube.com/watch?v=_1PiJAjB7Io&list=PLRx0vPvlEmdDNHeulKC6JM25MmZVS_3nT&index=20)부분을 참고 바란다.
+
 ```shell
 ~/D-Coder-Study623$ ./last1 
 총 몇권의 책을 등록하시겠습니까? 3
@@ -374,7 +376,7 @@ E-mail : rlawowns97@naver.com, rlawowns97@gmail.com
 
 <br>
 
-## 힌트
+## 두번째 힌트
 
 ```c
 #include <stdio.h>

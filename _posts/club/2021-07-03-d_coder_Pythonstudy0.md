@@ -58,7 +58,7 @@ Shell : 우리가 코드를 진짜로 실행시킬 곳
 
 <br>
 
-![Pstudy0_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/club/img/Pstudy0_1.png?raw=True){: width="80%" height="22%"}
+![Pstudy0_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/club/img/Pstudy0_1.png?raw=True){: width="90%" height="27%"}
 
 여기서부터는 이해가 안될 수 있습니다. `Python` 이랑 관계없는 것들이라 이해하실 필요는 없지만 코드를 실행시키는 방법이기에 잘 보셔야 합니다.
 
@@ -66,7 +66,7 @@ Shell : 우리가 코드를 진짜로 실행시킬 곳
 
 2. 오른쪽에서 `console`이 아닌 `shell`버튼을 클릭해주세요. 그러면 `~/본인이 설정한 프로젝트 이름`이 나타날 것입니다. 저 같은 경우는 `~/D-Coder-PythonStudy77` 입니다. 
 
-3. 이제 코드를 컴파일 하기 위해 `shell`에 아래와 같이 입력하시면 됩니다.
+3. 이제 코드를 실행 하기 위해 `shell`에 아래와 같이 입력하시면 됩니다.
 
    ```shell
    python "우리가 실행시킬 python 코드의 이름"

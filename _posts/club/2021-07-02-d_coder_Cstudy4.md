@@ -76,7 +76,7 @@ if(str1 == str2) printf("SAME");
 else printf("Different");
 ```
 
-이번에도 `SAME`이라는 결과가 나와야할 것 같지만, 실제로 코드를 실행시켜보면 `Different`라는 결과가 나온다. 분명히 `a="abcd"`이고 우리는 정확하게 같은 문자열을 비교했는데 왜 `SAME`이 안나오는 것일까?
+이번에도 `SAME`이라는 결과가 나와야할 것 같지만, 실제로 코드를 실행시켜보면 `Different`라는 결과가 나온다. 분명히 `str1, str2="abcd"`이고 우리는 정확하게 같은 문자열을 비교했는데 왜 `SAME`이 안나오는 것일까?
 
 이 코드는 언뜻보면 문자열을 비교하는 것 같지만 절대로 우리가 원하는 결과를 얻을 수가 없다. 왜냐하면 `if(str1 == str2)`라는 코드는 문자열을 비교하는 것이 아니라 문자열의 '주소값'를 비교하는 것이기 때문이다([출처](https://enter.tistory.com/146)). 이 말이 이해가 잘 안간다면 str1과 str2를 출력해봐라.
 
@@ -105,11 +105,10 @@ printf("%x", str2);
 int main() {
   char str1[5] = "abcd";
 	char str2[5] = "abcd";
-  
   // strcmp는 두 문자열의 시작주소를 입력으로 받는다.
   // 두 문자열이 같을경우, 0을 반환. 다를경우 -1를 반환.
-	if(strcmp(st1, str2) == 0) printf("SAME");
-	else printf("Different");
+  if(strcmp(st1, str2) == 0) printf("SAME");
+  else printf("Different");
   
   return 0;
 }
@@ -127,7 +126,7 @@ int main() {
 
 int main() {
   char str1[20] = "original";
-	char str2[8] = "new one";
+  char str2[8] = "new one";
   
   strcpy(str1, str2);
   
@@ -247,7 +246,7 @@ pi = (int *)malloc(sizeof(int)); // == (int*)malloc(4);
 int main() {
   
   int *pi;
-	pi = (int *)malloc(sizeof(int)); // == (int*)malloc(4);
+  pi = (int *)malloc(sizeof(int)); // == (int*)malloc(4);
   if(pi == NULL) {
     printf("Error"); // 메모리 동적할당 실패.
     exit(1); // program 종료. 코드가 끝난다.
@@ -307,8 +306,8 @@ void showBookInfo(입력 넣으세요) { // 우리가 입력한 책 정보 출�
 
 int main(void) { 
   struct Book *books;
-
-	return 0;
+  
+  return 0;
 }
 ```
 

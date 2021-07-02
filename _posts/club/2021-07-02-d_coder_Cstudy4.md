@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "C-study-4"
+title: "C-study-4(마지막)"
 author: "xi-jjun"
 tags: 동아리
 
 ---
 
-# 4주차
+# 4주차(마지막)
 
 아래와 같은 것들을 공부하시면 됩니다. [동빈나 유투브](https://www.youtube.com/watch?v=dh4hdtZ00EU&list=PLRx0vPvlEmdDNHeulKC6JM25MmZVS_3nT)를 참고하였으나 순서가 약간 다를 수 있습니다.
 

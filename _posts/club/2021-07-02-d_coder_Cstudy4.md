@@ -104,7 +104,7 @@ printf("%x", str2);
 
 int main() {
   char str1[5] = "abcd";
-	char str2[5] = "abcd";
+  char str2[5] = "abcd";
   // strcmp는 두 문자열의 시작주소를 입력으로 받는다.
   // 두 문자열이 같을경우, 0을 반환. 다를경우 -1를 반환.
   if(strcmp(st1, str2) == 0) printf("SAME");

@@ -36,7 +36,7 @@ char2 = "world!!" # string
 double1 = 23.432 # double
 ```
 
-`python`같은 경우, C언어처럼 `변수` 를 선언할 때 앞에 `자료형`을 명시해줄 필요가 없다. '어떤' 값을 넣는지에 따라 그 `변수`의 `자료형`이 결정되는 것이다. 
+`python`같은 경우 C언어와 달리, `변수` 를 선언할 때 앞에 `자료형`을 명시해줄 필요가 없다. '어떤' 값을 넣는지에 따라 그 `변수`의 `자료형`이 결정되는 것이다. 
 
 <br>
 
@@ -119,7 +119,7 @@ else: # a와 b가 같지 않고, a와 c도 같이 않으면,
 
 ## 문제1
 
-```console
+```shell
 ~/D-Coder-PythonStudy77$ python week01_1.py 
 숫자1 입력 : 2
 숫자2 입력 : 4
@@ -132,7 +132,7 @@ else: # a와 b가 같지 않고, a와 c도 같이 않으면,
 
 ## 문제2
 
-```python
+```shell
 ~/D-Coder-PythonStudy77$ python week01_2.py 
 숫자1 입력 : 5
 숫자2 입력 : 43

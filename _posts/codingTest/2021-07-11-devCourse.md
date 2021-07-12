@@ -100,10 +100,10 @@ class Solution {
 간단하게 문제를 다시 정리해보자면, 
 
 > <input example 1>
-> [적재량1, 적재량2, 적재량3, 적재량4]  m
-> 보내고자 하는 상자 수 : m
+> [적재량1, 적재량2, 적재량3, 적재량4]  m<br>
+> 보내고자 하는 상자 수 : m<br><br>
 >
-> [output]
+> [output]<br>
 > 3 : 사용하게 되는 보트의 수
 
 입력을 `[1,3,2,5,4] 6`로 준다고 가정하고 문제에서 제시한 방법대로 처리해 나아가보자. 코딩테스트는 처음이라서 차근차근하게 될 수밖에 없었다.
@@ -225,91 +225,93 @@ public int[] recursionF(int[] answer, int money, int index)
 
 이번 문제는 배열의 길이도 문제1 보다 길고 생각해야 하는 경우의 수도 더 많았기 때문에 직접 하나하나 따져가면서 시뮬레이션을 했었다.
 
-1. [500] 
+1. [500] <br>
    money=500 > 0  양수이기 때문에 그대로 answer배열에 추가.  => answer = {500}
 
-2. [500, 1000]
+2. [500, 1000]<br>
    money=1000 > 0  양수이기 때문에 그대로 answer배열에 추가.  => answer = {500, 1000}
 
-3. [500, 1000, -300]
-   money=-300 < 0 음수이기 때문에 `재귀 함수` 실행.
-   answer = {500, 1000} : 현재 answer 배열.
-   money = -300 : 현재 들어온 돈(출금).
-   index = answer.length = 2 : 배열의 맨 끝 값 찾기 위함.
+3. [500, 1000, -300]<br>
+   money=-300 < 0 음수이기 때문에 `재귀 함수` 실행.<br>
+   answer = {500, 1000} : 현재 answer 배열.<br>
+   money = -300 : 현재 들어온 돈(출금).<br>
+   index = answer.length = 2 : 배열의 맨 끝 값 찾기 위함.<br>
 
-   
+   <br>
 
-   <`재귀 함수`> 실행.
-   index - 1 = answer.length - 1= 2 - 1 = 1 : 배열의 맨 끝 값 찾기 위해 "배열크기 - 1" 진행.
-   answer[1] = 1000 : 맨 끝 값 찾음.
-   money = -300 
-   answer[1] + money > 0 양수이기 때문에 `재귀 함수` 종료.   => answer = {500, 700}
+   <`재귀 함수`> 실행.<br>
+   index - 1 = answer.length - 1= 2 - 1 = 1 : 배열의 맨 끝 값 찾기 위해 "배열크기 - 1" 진행.<br>
+   answer[1] = 1000 : 맨 끝 값 찾음.<br>
+   money = -300 <br>
+   answer[1] + money > 0 양수이기 때문에 `재귀 함수` 종료.   => answer = {500, 700}<br>
 
-4. [500, 1000, -300, 200]
-   money = 1000 > 0  => answer = {500, 700, 200}
+4. [500, 1000, -300, 200]<br>
+   money = 1000 > 0  => answer = {500, 700, 200}<br>
 
-5. [500, 1000, -300, 200, -400]
-   money = -400 < 0 : 음수이기 때문에 `재귀 함수` 실행.
-   answer = {500, 700, 200}
-   money = -400
-   index = answer.length = 3
+5. [500, 1000, -300, 200, -400]<br>
+   money = -400 < 0 : 음수이기 때문에 `재귀 함수` 실행.<br>
+   answer = {500, 700, 200}<br>
+   money = -400<br>
+   index = answer.length = 3<br>
 
-   
+   <br>
 
-   <`재귀 함수`> 실행.
-   index - 1 = 2
-   answer[2] = 200
-   money = -400
-   answer[1] + money < 0 : 음수이기 때문에 또 다시 `재귀 함수` 실행.
-   debt = answer[1] + money = -200 : 200만큼의 `빚`생김.
-   answer = {500, 700} : 현재 answer 배열.
+   <`재귀 함수`> 실행.<br>
+   index - 1 = 2<br>
+   answer[2] = 200<br>
+   money = -400<br>
+   answer[1] + money < 0 : 음수이기 때문에 또 다시 `재귀 함수` 실행.<br>
+   debt = answer[1] + money = -200 : 200만큼의 `빚`생김.<br>
+   answer = {500, 700} : 현재 answer 배열.<br>
 
-   
+   <br>
 
-   < re : `재귀 함수`> 실행.
-   index - 1 = 1
-   answer[1] = 700
-   money = debt = -200
-   answer[1] + money(debt) > 0  양수이기 때문에 `재귀 함수` 종료.   => answer = {500, 500}
+   < re : `재귀 함수`> 실행.<br>
+   index - 1 = 1<br>
+   answer[1] = 700<br>
+   money = debt = -200<br>
+   answer[1] + money(debt) > 0  양수이기 때문에 `재귀 함수` 종료.   => answer = {500, 500}<br>
 
    > 결과 값 : answer = {500,500}
 
-6. 내가 설정한 테스트 배열 : [500, 1000, -300, 200, -1000]
+   <br>
 
-   5번에서 내가 설정한 테스트 배열대로 들어오게 된다면?을 가정.
+6. 내가 설정한 테스트 배열 : [500, 1000, -300, 200, -1000]<br>
 
-   money=-1000 < 0
-   answer = {500, 700, 200}
-   money = -1000
-   index = answer.length = 3
+   5번에서 내가 설정한 테스트 배열대로 들어오게 된다면?을 가정.<br>
 
-   
+   money=-1000 < 0<br>
+   answer = {500, 700, 200}<br>
+   money = -1000<br>
+   index = answer.length = 3<br>
 
-   <`재귀 함수`> 실행.
-   index - 1= 2
-   answer[2]=200
-   money=-1000
-   answer[2] + money < 0
-   debt = answer[2] + money = -800
-   answer = {500, 700}
+   <br>
 
-   
+   <`재귀 함수`> 실행.<br>
+   index - 1= 2<br>
+   answer[2]=200<br>
+   money=-1000<br>
+   answer[2] + money < 0<br>
+   debt = answer[2] + money = -800 `빚`이 남았기 때문에 한번 더 `재귀 함수`실행.<br>
+   answer = {500, 700}<br>
 
-   < re : `재귀 함수`> 실행.
-   index - 1 = 1
-   answer[1] = 700
-   money=debt=-800
-   answer[1] + money < 0
-   debt = answer[1] + money = -100
-   answer = {500}
+   <br>
 
-   
+   < re : `재귀 함수`> 실행.<br>
+   index - 1 = 1<br>
+   answer[1] = 700<br>
+   money=debt=-800<br>
+   answer[1] + money < 0<br>
+   debt = answer[1] + money = -100 `빚`이 남았기 때문에 한번 더 `재귀 함수`실행. <br>
+   answer = {500}<br>
 
-   < re : re : `재귀 함수`> 실행.
-   index - 1 = 0
-   answer[0] = 500
-   money=debt=-100
-   answer[0] + money > 0  => answer = {400}
+   <br>
+
+   < re : re : `재귀 함수`> 실행.<br>
+   index - 1 = 0<br>
+   answer[0] = 500<br>
+   money=debt=-100<br>
+   answer[0] + money > 0  => answer = {400}<br>
 
    > 결과 값 : answer = {400}
 

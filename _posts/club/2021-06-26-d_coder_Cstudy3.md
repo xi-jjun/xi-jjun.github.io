@@ -202,7 +202,7 @@ int main(void) { // main함수는 건들지 마시오.
 	number = 5;
 	printf("%d\n", number);
 
-	ChangePlusOne(number);
+	ChangePlusOne(&number);
 	printf("%d\n", number);
 
 	return 0;

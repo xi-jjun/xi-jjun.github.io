@@ -20,7 +20,7 @@ KOCW 네트워크 강의(이석복 교수님)를 듣고 정리하여 쓴 글이�
 
 ![network4_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network4_1.png?raw=True){: width="85%" height="35%"}
 
-이전까지는 이상적인 상황에서의 packe(data)의 이동을 생각했지만, 실제로는 packet loss와 error가 일어날 수 있다. 이러한 상황이 일어나면 안되기 때문에 우리는 신뢰성이 있는 data를 전송해야 한다.
+이전까지는 이상적인 상황에서의 packet(data)의 이동을 생각했지만, 실제로는 packet loss와 error가 일어날 수 있다. 이러한 상황이 일어나면 안되기 때문에 우리는 신뢰성이 있는 data를 전송해야 한다.
 
 <br>
 

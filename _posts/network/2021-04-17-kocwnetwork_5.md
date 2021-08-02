@@ -107,91 +107,91 @@ $$
 
 <br>
 
-<보내기 시작할 때 t=0>
+<보내기 시작할 때 t=0><br>
 
-![network5_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_4.png?raw=True){: width="100%" height="15%"}
+![network5_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_4.png?raw=True){: width="100%" height="15%"}<br>
 
-숫자 : packet번호, window size = 4인 경우,
+숫자 : packet번호, window size = 4인 경우,<br>
 
-- `packet 0` : sender에서 receiver에게 packet 0 전송. [RDT 3.0](https://xi-jjun.github.io/2021-04-15/kocwnetwork_4)이므로 packet 전송하자마자 `timer 0` 이 설정된다.
+- `packet 0` : sender에서 receiver에게 packet 0 전송. [RDT 3.0](https://xi-jjun.github.io/2021-04-15/kocwnetwork_4)이므로 packet 전송하자마자 `timer 0` 이 설정된다.<br>
 
-  - `packet #` : packet #이 전송되자마자 `timer #`이 설정되고, timer가 끝나기 전에 `ACK #` 받게되면 해제된다.
+  - `packet #` : packet #이 전송되자마자 `timer #`이 설정되고, timer가 끝나기 전에 `ACK #` 받게되면 해제된다.<br>
 
-  <packet 0을 보내고 ACK 0을 받고 난 후 상황>
+  <packet 0을 보내고 ACK 0을 받고 난 후 상황><br>
 
   ![network5_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_5.png?raw=True){: width="100%" height="15%"}
 
   <br>
 
-- `packet 1` : packet 1 전송.
+- `packet 1` : packet 1 전송.<br>
 
-  <packet 1을 보내고 ACK 1을 받고 난 후 상황>
+  <packet 1을 보내고 ACK 1을 받고 난 후 상황><br>
 
-  ![network5_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_6.png?raw=True){: width="100%" height="15%"}
-
-  <br>
-
-- `packet 2` : packet loss 발생!!
-
-  <pacekt 2가 loss된 후 상황>
-
-  ![network5_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_7.png?raw=True){: width="100%" height="15%"}
-
-  window가 움직이지 않는다. receiver에서는 계속 `ACK 1`만을 보내는 중.
+  ![network5_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_6.png?raw=True){: width="100%" height="15%"}<br>
 
   <br>
 
-- `packet 3~5` : receiver에서 다 버려버린다.
+- `packet 2` : packet loss 발생!!<br>
 
-  <packet 3~5는 모두 잘 도착했으나 receiver가 원하는 packet이 아니기에 모두 버려진 상황>
+  <pacekt 2가 loss된 후 상황><br>
+
+  ![network5_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_7.png?raw=True){: width="100%" height="15%"}<br>
+
+  window가 움직이지 않는다. receiver에서는 계속 `ACK 1`만을 보내는 중.<br>
+
+  <br>
+
+- `packet 3~5` : receiver에서 다 버려버린다.<br>
+
+  <packet 3~5는 모두 잘 도착했으나 receiver가 원하는 packet이 아니기에 모두 버려진 상황><br>
 
   ![network5_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_8.png?raw=True){: width="100%" height="15%"}
 
   <br>
 
-- `packet 2 Time out!!` : receiver에서 `ACK 1`을 계속 보냈기에 `ACK 2`를 못 받게 돼서 packet 2의 timer가 시간초과 됐다.
+- `packet 2 Time out!!` : receiver에서 `ACK 1`을 계속 보냈기에 `ACK 2`를 못 받게 돼서 packet 2의 timer가 시간초과 됐다.<br>
 
-  → `Go-Back-N` 실행.
+  → `Go-Back-N` 실행.<br>
 
-- `packet 2~5` : loss가 발생했던 packet으로 돌아가서 해당 packet부터 window의 마지막 packet까지 재전송.
+- `packet 2~5` : loss가 발생했던 packet으로 돌아가서 해당 packet부터 window의 마지막 packet까지 재전송.<br>
 
-  <packet 2 재전송. `ACK 2` 못 받은 상황 : 한꺼번에 보내는 중...>
+  <packet 2 재전송. `ACK 2` 못 받은 상황 : 한꺼번에 보내는 중...><br>
 
-  ![network5_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_9.png?raw=True){: width="100%" height="20%"}
+  ![network5_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_9.png?raw=True){: width="100%" height="20%"}<br>
 
-  `ACK 2`를 받기 전 packet loss없이 window안의 packet을 전부 재전송 중이다. `ACK 2`를 받았다면, window는 슬라이드하여 `3, 4, 5, 6`를 포함할 것이다.
-
-  <br>
-
-  <packet 3 재전송. `ACK 3` 못 받은 상황 : 한꺼번에 보내는 중...>
-
-  ![network5_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_10.png?raw=True){: width="100%" height="20%"}
-
-  `ACK 3`를 받기 전 packet loss없이 window안의 packet을 전부 재전송 중이다. `ACK 3`를 받았다면, window는 슬라이드하여 `4, 5, 6, 7`를 포함할 것이다.
+  `ACK 2`를 받기 전 packet loss없이 window안의 packet을 전부 재전송 중이다. `ACK 2`를 받았다면, window는 슬라이드하여 `3, 4, 5, 6`를 포함할 것이다.<br>
 
   <br>
 
-  <... packet 5까지 재전송. `ACK 5`받은 후 상황>
+  <packet 3 재전송. `ACK 3` 못 받은 상황 : 한꺼번에 보내는 중...><br>
 
-  ![network5_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_11.png?raw=True){: width="100%" height="20%"}
+  ![network5_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_10.png?raw=True){: width="100%" height="20%"}<br>
+
+  `ACK 3`를 받기 전 packet loss없이 window안의 packet을 전부 재전송 중이다. `ACK 3`를 받았다면, window는 슬라이드하여 `4, 5, 6, 7`를 포함할 것이다.<br>
 
   <br>
 
-`Go-Back-N`에서는 receiver를 아무것도 못하는 바보라고 생각한다. 따라서 receiver에는 buffer도 없고, 할 줄 아는게 ACK 주는거랑 원하는 packet이 아니면 버리는 것 밖에 없다. 그리고 sender에서는 packet loss에 대비하기 위해서 window 안에 있는 packet을 저장하는 buffer가 존재해야 한다. 따라서 window는 보낼 packet들을 임시저장하는 buffer라고 생각할 수 있다.
+  <... packet 5까지 재전송. `ACK 5`받은 후 상황><br>
+
+  ![network5_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_11.png?raw=True){: width="100%" height="20%"}<br>
+
+  <br>
+
+`Go-Back-N`에서는 receiver를 아무것도 못하는 바보라고 생각한다. 따라서 receiver에는 buffer도 없고, 할 줄 아는게 ACK 주는거랑 원하는 packet이 아니면 버리는 것 밖에 없다. 그리고 sender에서는 packet loss에 대비하기 위해서 window 안에 있는 packet을 저장하는 buffer가 존재해야 한다. 따라서 window는 보낼 packet들을 임시저장하는 buffer라고 생각할 수 있다.<br>
 
 <br>
 
-근데 의문이 있다. 아직 배울게 더 남아있다는 사실을 알긴 하다만 `Go-Back-N`방법은 너무 비효율적이라는 생각이 들었다. loss된 packet만 다시 보내면 되는데 굳이 window안에 있는 전부를 재전송하는 것일까? 바로 위에서 설명했듯이 receiver측에는 buffer가 없다고 가정했기 때문이다. 강의에서 나의 궁금증을 바로 해결해 줬다.
+근데 의문이 있다. 아직 배울게 더 남아있다는 사실을 알긴 하다만 `Go-Back-N`방법은 너무 비효율적이라는 생각이 들었다. loss된 packet만 다시 보내면 되는데 굳이 window안에 있는 전부를 재전송하는 것일까? 바로 위에서 설명했듯이 receiver측에는 buffer가 없다고 가정했기 때문이다. 강의에서 나의 궁금증을 바로 해결해 줬다.<br>
 
 <br>
 
-# Selective Repeat
+# Selective Repeat<br>
 
-실제 window size는 아까 위에서 가정했던 것 처럼 작지가 않다. 따라서 1개가 loss됐다고 전부 다 다시 보내기엔 너무 비효율적일 것이다. 따라서 `Selective Repeat`이 나왔다.
+실제 window size는 아까 위에서 가정했던 것 처럼 작지가 않다. 따라서 1개가 loss됐다고 전부 다 다시 보내기엔 너무 비효율적일 것이다. 따라서 `Selective Repeat`이 나왔다.<br>
 
 <br>
 
-### * 다시!! 정리하고 들어갈 내용 - ACK 의미
+### * 다시!! 정리하고 들어갈 내용 - ACK 의미<br>
 
 - 4강에서 얘기했던 ACK # : 나 packet #번 잘 받았어!!
 - Go-Back-N의 ACK # : 나 #번 packet까지 잘 받았어!!

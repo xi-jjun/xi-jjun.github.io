@@ -118,9 +118,9 @@ $$
   - `packet #` : packet #이 전송되자마자 `timer #`이 설정되고, timer가 끝나기 전에 `ACK #` 받게되면 해제된다.<br>
 
   < packet 0을 보내고 ACK 0을 받고 난 후 상황 ><br>
-
-![network5_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_5.png?raw=True){: width="100%" height="15%"}
-
+  
+  ![network5_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_5.png?raw=True){: width="100%" height="15%"}
+  
   <br>
 
 - `packet 1` : packet 1 전송.<br>

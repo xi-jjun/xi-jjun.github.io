@@ -36,7 +36,7 @@ TransPort Layer에서 **Reliable Data Transfer**를 위한 기본원리에 대�
 
 <br>
 $$
-U_{sender}={{L/R} \over RTT+{L/R}}
+U_{sender}={{L/R} \over {RTT+{L/R}}}
 $$
 
 > Utilization : 전체 시간 중에서 sender가 network를 사용하는 비율. 크면 클수록 좋다.

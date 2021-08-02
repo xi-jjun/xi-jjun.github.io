@@ -119,7 +119,7 @@ $$
 
   <packet 0을 보내고 ACK 0을 받고 난 후 상황><br>
 
-  ![network5_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_5.png?raw=True){: width="100%" height="15%"}
+![network5_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network5_5.png?raw=True){: width="100%" height="15%"}
 
   <br>
 

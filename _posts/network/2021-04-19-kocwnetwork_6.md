@@ -58,6 +58,8 @@ Application의 message가 **socket이라는 interface를 통해** Transport laye
 
 ![network6_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network6_3.png?raw=True){: width="85%" height="50%"}
 
+<sub> [사진 출처](http://contents2.kocw.or.kr/KOCW/document/2015/hanyang/leesukbok0326/6.pdf) </sub>
+
 - `Source Port #, Dest Port #` : 16bit. 따라서 port번호의 범위는 0 ~ 2<sup>16</sup>-1 이다. 
 - `Sequence number` : TCP에서는 data의 시작 byte번호이다.
 - `Acknowledgement number` : TCP의 `ACK #`은 **"(#-1)번까지 모두 잘 받았으니 #번째 segment부터 보내줘"**.
@@ -78,6 +80,8 @@ Application의 message가 **socket이라는 interface를 통해** Transport laye
 <br>
 
 ![network6_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network6_4.png?raw=True){: width="60%" height="80%"}
+
+<sub> [사진 출처](http://contents2.kocw.or.kr/KOCW/document/2015/hanyang/leesukbok0326/6.pdf) </sub>
 
 - `#1` : `Host A`가 "C"라는 데이터를 Host B에게 보냈다. "C"는 1개 byte단위이다. 그리고 데이터 "C"의 시작 번호는 "42"라고 하자. 이전에 Host B로 부터 받은 데이터의 마지막 번호는 "78"이라고 하자.
 
@@ -143,6 +147,8 @@ $$
 아래 그림은 sample RTT와 timeout을 Estimated RTT로 했을 때의 그래프이다. 편차가 큰 RTT에 대해서는 무조건 timeout이 일어날 것이다.
 
 ![network6_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/network6_8.png?raw=True){: width="80%" height="50%"}
+
+<sub> [사진 출처](http://contents2.kocw.or.kr/KOCW/document/2015/hanyang/leesukbok0326/6.pdf) </sub>
 
 <br>
 

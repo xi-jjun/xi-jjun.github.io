@@ -24,17 +24,17 @@ layout: default
   
 </div>
 
-{% if page.comments %}
+<!-- {% if page.comments %} -->
   <!-- {% include disqus_comments.html %} -->
-{% endif %}
-<script src="https://utteranc.es/client.js"
-        repo="xi-jjun/xi-jjun.github.io"
+  <script src="https://utteranc.es/client.js"
+        repo="xi-jjun/blog-comments"
         issue-term="pathname"
-        label="myBlog-comments"
         theme="github-light"
         crossorigin="anonymous"
         async>
 </script>
+<!-- {% endif %} -->
+
 
 <div class="pagination">
   {% if page.next.url %}

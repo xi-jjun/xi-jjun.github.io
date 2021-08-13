@@ -38,10 +38,11 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
 # Disqus (Set to your disqus id)
 # disqus:         jekyll-tale
+
+# site setting
+repository               : "xi-jjun/blog-comments"
 comments:
   provider               : "utterances"
-
   utterances:
-    theme                : "github-light" #(default), "github-dark"
-    issue_term           : "pathname" #(default)
-
+    theme                : "github-light" # (default), "github-dark"
+    issue_term           : "pathname" # (default)

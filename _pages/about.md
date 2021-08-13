@@ -2,7 +2,7 @@
 layout: post
 title: "자기소개"
 author: "xi-jjun"
-permalink: /about/
+permalink: /myInfo/
 ---
 
 비전공자로써 개발자에 도전하고자 만들게 됐습니다. 전자전기공학부 4학년이 시작할 때 개발자의 꿈을 갖게 됐으며 목표는 백엔드 개발자 입니다.

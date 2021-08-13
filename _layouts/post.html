@@ -23,14 +23,11 @@ layout: default
   {{ content }}
 
 </div>
-
+<script src="https://utteranc.es/client.js" repo="xi-jjun/blog-comments" issue-term="pathname" theme="github-light"
+  crossorigin="anonymous" async>
+  </script>
 {% if page.comments %}
 <!-- {% include disqus_comments.html %} -->
-<div>
-  <script src="https://utteranc.es/client.js" repo="xi-jjun/blog-comments" issue-term="pathname" theme="github-light"
-    crossorigin="anonymous" async>
-    </script>
-</div>
 
 {% endif %}
 

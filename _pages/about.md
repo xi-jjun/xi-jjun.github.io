@@ -11,6 +11,8 @@ permalink: /about/
 
 2021-08-13 기준으로 댓글 기능 활성화 했습니다.
 
+2021-08-17 기준으로 구글에 검색이 가능하게 되었습니다.
+
 * 이메일 
   * rlawowns97@naver.com (가장 많이 봄)
   * rlawowns97@gmail.com (꽤 많이 봄)

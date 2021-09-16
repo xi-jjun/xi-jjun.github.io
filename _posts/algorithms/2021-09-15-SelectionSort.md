@@ -116,14 +116,6 @@ for (int i = 0; i < SIZE; i++) {
 
 시간 복잡도에 대해서 알아보자. *(유투브 영상의 코드를 기준으로 구했다.)* 현재 10개의 요소들을 계산할 때, 맨 처음 탐색에는 10번의 비교를 했었다. 그 다음 탐색에는 9번의 비교를 했어야 했다.
 
-
-
-
-
-
-
-
-
 ```text
 첫번째 탐색 : 10번의 비교
 두번째 탐색 : 9번의 비교
@@ -138,7 +130,7 @@ for (int i = 0; i < SIZE; i++) {
 
 그렇다면 N개의 데이터에 대한 시간복잡도는 어떻게 될까? 
 $$
-\text{Time Complexity}={{N*(N+1)}\over2}
+\text{Time Complexity}={{N*(N+1)}\over{2}}
 $$
 가 된다.
 
@@ -161,8 +153,9 @@ long startTime, endTime;
 
 // random array generate
 for (int i = 0; i < SIZE; i++) {
-    sel[i] = (int) (Math.random() * SIZE);
-    sys[i] = (int) (Math.random() * SIZE);
+    double value = Math.random();
+    sel[i] = (int) (value * SIZE);
+    sys[i] = (int) (value * SIZE);
 }
 ```
 

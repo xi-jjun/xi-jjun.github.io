@@ -130,7 +130,7 @@ for (int i = 0; i < SIZE; i++) {
 
 그렇다면 N개의 데이터에 대한 시간복잡도는 어떻게 될까? 
 $$
-\text{Time Complexity}={{N*(N+1)}\over{2}}
+\text{Time Complexity}={N*(N+1)\over2}
 $$
 가 된다.
 

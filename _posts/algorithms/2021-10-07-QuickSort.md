@@ -33,25 +33,17 @@ Insertion sort나 Selection sort와는 달리 글로봤을 때는 이해가 잘 
 
 ![quick1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/algorithms/img/quick1.png?raw=True){: width="60%"}
 
-![quick2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/algorithms/img/quick2.png?raw=True){: width="70%"}
+![quick_re1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/algorithms/img/quick_re1.png?raw=True){: width="70%"}
 
 - `step1-1` : `pivot=7(중앙값)`이고, 왼쪽 그룹에서는 `7`보다 큰 값을 찾으면 `left`로 표시. 오른쪽 그룹에서는 `7`보다 작은 값을 찾으면 `right`표시.
-- `step1-2` : `left=1(10의 index), right=8(5의 index)`가 됨.
-- `step1-3` : left <= right 이므로 해당 index의 값들을 swap. 그 후 다음 탐색 위치 설정(`left++(1의 index)`, `right--(3의 index)`)
-- `step1-4` : 왼쪽 그룹에서는 `pivot(==7)`보다 큰 값 없으므로 `left=4(7의 index)`가 됨. 오른쪽 그룹에서는 `right=7(3의 index)`가 됨.
-- `step1-5` : `pivot(==7)`과 `right=7(3의 index)`가 swap. 그 후 left와 right 의 다음 탐색 위치로 설정.
-- `step1-6` : left > right 이므로 `while loop` 탈출. 2개의 그룹으로 나눠서 재귀적 실행.
+- `step1-2` : `left=1(값10의 index), right=8(값5의 index)`가 됨.
+- `step1-3` : left <= right 이므로 해당 index의 값들을 swap. 그 후 다음 탐색 위치 설정(`left++(값1의 index)`, `right--(값3의 index)`)
+- `step1-4` : 왼쪽 그룹에서는 `pivot(==7)`보다 큰 값 없으므로 `left=4(값7의 index)`가 됨. 오른쪽 그룹에서는 `right=7(값3의 index)`가 됨.
+- `step1-5` : `pivot(==7)`과 `right=7(값3의 index)`가 swap. 그 후 left와 right 의 다음 탐색 위치로 설정.
+- `step1-6` : left > right 이므로 `while loop` 탈출. 
+- `step1-7` : 2개의 그룹으로 나뉘어 재귀적 실행.
 
-<br>
-
-![quick3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/algorithms/img/quick3.png?raw=True){: width="50%"}
-
-- `step2-1` : `step1`에서의 왼쪽 그룹에서 `pivot=4(왼쪽 그룹의 중앙값)`를 정한 뒤 `pivot`을 기준으로 왼쪽과 오른쪽에서 다시 탐색을 시작. `left=1(5의 index), right=4(3의 index)` 가 나온다.
-- `step2-2` : left <= right 조건을 만족. 따라서 swap 실행. 그 후 다음  탐색 지점으로 `left, right`를 설정.
-- `step2-3` : left <= right 조건을 만족. 따라서 swap 실행.(하지만 index=3의 값을 제자리에 다시 놓는 동작이다.)
-- `step2-4` : swap 후 `left, right`를 다음 탐색 지점으로 설정. 그랬더니 left > right 이므로 `while loop` 탈출. 다시 2개의 그룹으로 나눠져서 재귀적 실행.
-
-... 나눠진 그룹들에 대하여 재귀적 실행을 그룹의 크기가 1이 될 때까지 반복하면 정렬이 된다.
+...반복하면 된다. 반복하다가 그룹의 크기가 1이되면 right쪽 재귀 종료. 다시 돌아와서 left쪽 그룹을 정리해준다.
 
 <br>
 
@@ -69,7 +61,7 @@ Insertion sort나 Selection sort와는 달리 글로봤을 때는 이해가 잘 
 
   ![quick4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/algorithms/img/quick4.png?raw=True){: width="80%"}
 
-  위 그림과 같이 총 4번의 분할 과정을 거치 정렬이 완료된다. 분활 횟수를 k, 원소의 개수를 n 이라고 하면, k = *log*n 의 식을 만족하게 된다. 원소의 개수 n만큼 비교를 진행하므로 최종적인 quick sort의 연산 횟수는 `n*logn 가 된다. 
+  위 그림과 같이 총 4번의 분할 과정을 거치 정렬이 완료된다. 분활 횟수를 k, 원소의 개수를 n 이라고 하면, k = *log*n 의 식을 만족하게 된다. 원소의 개수 n만큼 비교를 진행하므로 최종적인 quick sort의 연산 횟수는 `n*logn` 가 된다. 
 
 - Worst case - `O(N*N)`
 

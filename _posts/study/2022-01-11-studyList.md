@@ -76,7 +76,7 @@ tags: Study
 
 <br>
 
-# Alogorithm
+# Algorithm
 
 ## 엔지니어 대한민국 - [클릭!](https://www.youtube.com/user/damazzang)
 
@@ -142,9 +142,29 @@ tags: Study
 
 <br>
 
-## 코딩애플 - [클릭!]
+## 코딩애플 - [클릭!](https://www.youtube.com/channel/UCSLrpBAzr-ROVGHQ5EmxnUg)
 
 정말 추천합니다. 일단 기본적으로 `Javascript`를 사용하지만, 뭔가를 만들어 볼 수 있다는 것에 있어서는 가장 그럴듯 하고 가오가 사는 느낌의 application을 만들어냅니다. 그리고 재밌게 가르쳐주십니다. 
+
+<br>
+
+# Algorithm problem solving
+
+## BaekJoon - [클릭!](https://www.acmicpc.net/)
+
+처음하신다면 `문제` - `단계별로 풀어보기` 에서 `입출력과 사칙연산`부터 천천히 내려가시면서 푸는 것 추천드립니다. 대회도 자주 열리니 나중에는 도전해보심이 어떨까..합니다.
+
+<br>
+
+## Programmers - [클릭!](https://programmers.co.kr/learn/challenges)
+
+카카오 등등 기업의 코딩 테스트를 보는 사이트입니다. 그래서 해당 회사들에서 냈었던 문제가 제공됩니다. 
+
+<br>
+
+## CodeUp - [클릭!](https://codeup.kr/problem.php?id=1001)
+
+동빈나 선생님께서 추천하신 그 곳! 문제가 매우 쉬워서 언어를 처음 배우신 분들이 연습하기에 딱 적당합니다! 백준, 프로그래머스보다 난이도가 쉽습니다! (일단 기초 100제는 그래요..)
 
 <br>
 

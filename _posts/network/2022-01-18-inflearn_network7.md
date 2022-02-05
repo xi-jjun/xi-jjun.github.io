@@ -155,7 +155,7 @@ Host: www.google.com
 
 ## HTML Form tag를 이용한 데이터 전송
 
-![inflearn7_1](img/inflearn7_1.png?raw=True){: width="70%"}
+![inflearn7_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/network/img/inflearn7_1.png?raw=true){: width="70%"}
 
 ```html
 <form action="/save" method="post">

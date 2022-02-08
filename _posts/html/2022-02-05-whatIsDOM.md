@@ -85,7 +85,7 @@ html
 
    - 작성된 HTML이 유효하지 않은 상황
 
-     DOM은 유효한 HTML의 interface이다. DOM을 생성하는 동안 **브라우저는 유효하지 않은 HTML 코드를 올바르게 교정****해준다.
+     DOM은 유효한 HTML의 interface이다. DOM을 생성하는 동안 **브라우저는 유효하지 않은 HTML 코드를 올바르게 교정**해준다.
 
      ```html
      <html>

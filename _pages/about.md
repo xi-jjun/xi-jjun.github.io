@@ -13,11 +13,11 @@ permalink: /about/
 
 2021-08-17 기준으로 구글에 검색이 가능하게 되었습니다.
 
-* 이메일 
-  * rlawowns97@naver.com (가장 많이 봄)
-  * rlawowns97@gmail.com (꽤 많이 봄)
-
 * [Github](https://github.com/xi-jjun) (초라합니다..)
+  * [알고리즘 & 자료구조 & Java공부](https://github.com/xi-jjun/data-structure-and-algorithm)
+  * [OOP 공부](https://github.com/xi-jjun/oop-practice)
+  * [Spring, JPA 등등..]()
+
 
 <br>
 

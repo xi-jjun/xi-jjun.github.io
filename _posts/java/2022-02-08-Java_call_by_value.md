@@ -180,3 +180,25 @@ Java에서는 method가 parameter로 값 받으면 해당 value를 복사하여 
 ![java_call_by_value2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/java/img/java_call_by_value2.png?raw=True){: width="70%"}
 
 코드와 그림을 보면 parameter로 넘어온 값을 변경하더라도, main에서의 `foo`는 변함이 없는 것을 알 수 있다. 이는 `paramFoo`가 변한 것이지, `foo`가 변경된 것이 아니기 때문이다. 따라서 Java는 `Call By Value`로 parameter를 전달하는게 맞다.
+
+<br>
+
+## 이 블로그 뇌피셜 아니냐?
+
+라는 생각이 들 수 있다. 실제로 이 포스팅을 하기 위해 다양한 블로그를 찾아보면서 정보를 모았지만, 그 과정에 있어서
+
+> Java의 `reference type`에 있어서는 `call by reference`로 동작한다
+
+라는 말이 되게 많이 보인다. <span style="color: red; font-weight: bold;">물론 저 말은 틀렸다</span> 
+
+나의 뇌피셜과 내 머리에서 나온 실험(위 코드)가 아닌 [Java의 공식 docs](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)를 보도록 하자. 
+
+> Primitive arguments, such as an `int` or a `double`, **are passed into methods *by value***. This means that any changes to the values of the parameters exist only within the scope of the method. When the method returns, the parameters are gone and any changes to them are lost. 
+
+공식문서에 있는 말 그대로 가져왔다. Java의 `primitive type`에 있어서는 method에 `call by value`로 값이 넘어간다고 한다.
+
+> Reference data type parameters, such as objects, **are also passed into methods *by value***. This means that when the method returns, the passed-in reference still references the same object as before. *However*, the values of the object's fields *can* be changed in the method, if they have the proper access level.
+
+마찬가지로 Java의 Object와 같은 `reference type`에 대해서도 method에 `call by value`로 값이 넘어간다고 한다. 그리고 '객체의 field에 있는 값은 변경될 수 있다'라고 한다(접근이 가능하다면).
+
+처음부터 공식 문서를 인용하면서 포스팅을 했어야 했으나 코드로 실험을 하다가 나 스스로가 'Java는 무조건 call by value야!!' 라는 생각을 해버리는 바람에 근거가 빈약해졌다는 사실을 인지 못했었다. 다음에는 근거 없는 글을 쓰지 않도록 노력해야겠다.

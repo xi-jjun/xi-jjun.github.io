@@ -170,7 +170,7 @@ Java에서는 method가 parameter로 값 받으면 해당 value를 복사하여 
 
 그 말을 반박하기 위해 정리해보겠다.
 
-- `Call By Reference` : 함수 호출시 인자로 전달되는 **변수의 reference를 전달**한다. (해당 변수 자체를 가르킨다.)
+- `Call By Reference` : 함수 호출시 인자로 전달되는 **변수의 reference를 전달**한다. (해당 변수 자체를 가리킨다.)
 - `Call By Value` : 함수 호출시 인자로 전달되는 **변수의 값을 복사하여 전달**한다. 
 
 따라서 'Java의 argument 전달 방식이 변수 자체에 접근하는 `Call By Reference`라면 `paramFoo` 자체를 변경했을 때도 main에 수정사항이 반영되어야 한다' 라는 말은 `true`가 되어야 하지만 코드의 결과만 봐도 알 수 있듯이 `false`이다. 아래는 왜 거짓인지 한 눈에 알 수 있게 해준다.

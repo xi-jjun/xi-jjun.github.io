@@ -72,14 +72,13 @@ JVM은 GC를 통해 여유 메모리를 확보할 수 있어서 마냥 좋아만
 
 <br>
 
-## GC가 일어나는 때
+## Heap 구조
 
-- Heap 구조
-  - New Generation
-    - Eden : 새로운 객체가 여기에 할당된다. 만약 모두 사용되면 GC발생. → `Minor GC`
-    - Survival 0 : 
-    - Survival 1
-  - Old Generation
+- New Generation
+  - Eden 
+  - Survival 0  
+  - Survival 1
+- Old Generation
 
 <br>
 

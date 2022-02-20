@@ -333,7 +333,7 @@ c.removeAll(Collections.singleton(e));
 
 [effective-java: for-each vs for](https://itstory.tk/entry/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EA%B7%9C%EC%B9%9946-for-%EB%AC%B8%EB%B3%B4%EB%8B%A4%EB%8A%94-foreach-%EB%AC%B8%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC)
 
-[Java SE 8 docs: enhacned for(for-each)](https://docs.oracle.com/javase/specs/jls/se8/html/jls-14.html#jls-14.14.2)
+[Java SE 8 docs: enhanced for(for-each)](https://docs.oracle.com/javase/specs/jls/se8/html/jls-14.html#jls-14.14.2)
 
 Wikipedia
 

@@ -481,7 +481,7 @@ Exception in thread "main" java.util.ConcurrentModificationException
 
 - `lastIndexOfSubList` — returns the index of the last sublist of one `List` that is equal to another.
 
-간단하게 몇가지는 테스트를 진행해봤었다. [여기]에서 볼 수 있다.
+간단하게 몇가지는 테스트를 진행해봤었다. [여기](https://github.com/xi-jjun/data-structure-and-algorithm/blob/master/src/javastudy/collectionframework/listInterface/ListAlgorithmTest.java)에서 볼 수 있다.
 
 다음 포스팅에서는 Queue에 대해서 알아보도록 하자.
 

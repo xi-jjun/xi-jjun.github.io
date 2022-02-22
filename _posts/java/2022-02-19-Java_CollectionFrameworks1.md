@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JAVA - Collection Frameworks"
+title: "JAVA - Collection Frameworks1"
 author: "xi-jjun"
 tags: Java
 

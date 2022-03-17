@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spring-Security 1"
+title: "Spring-Security 2 - Form Login"
 author: "xi-jjun"
 tags: Spring-security
 
@@ -14,7 +14,7 @@ tags: Spring-security
 
 # Form 인증
 
-![security2_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_1.png?raw=True){: width="70%"}
+![security2_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_1.png?raw=True){: width="80%"}
 
 <sub>[사진 출처 : 인프런 정수원 강사님 - 스프링 시큐리티](https://www.inflearn.com/course/%EC%BD%94%EC%96%B4-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)</sub>
 
@@ -65,7 +65,7 @@ http.formLogin() : Form 로그인 인증 기능이 작동함
 
 ### UI 화면과 연관 있는 API
 
-![security2_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_2.png?raw=True){: width="70%"}
+![security2_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_2.png?raw=True){: width="80%"}
 
 ```java
 .usernameParameter("userId") // default : username
@@ -97,7 +97,7 @@ id, password parameter명을 설정해줄 수 있다. 기본값은 username, pas
 
 이름이.. 엄청 길다..
 
-![security2_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_3.png?raw=True){: width="80%"}
+![security2_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_3.png?raw=True){: width="90%"}
 
 <sub>[사진 출처 : 인프런 정수원 강사님 - 스프링 시큐리티](https://www.inflearn.com/course/%EC%BD%94%EC%96%B4-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)</sub>
 
@@ -129,7 +129,7 @@ id, password parameter명을 설정해줄 수 있다. 기본값은 username, pas
 
 ## 1. `/` 로 접속하려고 할 때
 
-![security2_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_4.png?raw=True){: width="70%"}
+![security2_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_4.png?raw=True){: width="80%"}
 
 `AbstractAuthenticationProcessingFilter` 가 해당 처리를 받는다. 
 
@@ -139,7 +139,7 @@ A) 그 클래스의 상위 클래스가 `AbstractAuthenticationProcessingFilter`
 
 <br>
 
-![security2_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_5.png?raw=True){: width="70%"}
+![security2_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_5.png?raw=True){: width="80%"}
 
 #1 에 해당하는 method를 보게 되면, 같은 클래스 내의 method임을 확인할 수 있다. 간단하게 말하자면 `AntPathRequestMatcher(/login)` 단계를 수행하고 있는 것이다. 그리고 Login_path는 바꿔줄 수 있었다!! 우리는 아까 아래와 같이 설정해줬었다.
 
@@ -172,7 +172,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ### 정리1 !!
 
-![security2_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_6.png?raw=True){: width="65%"}
+![security2_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_6.png?raw=True){: width="75%"}
 
 현재 `AntPathRequestMatcher(/login_proc)` 에서 해당 URL과 일치하지 않았기에 `doFilter`로 가게 되는 모습을 볼 수 있었다. 
 
@@ -182,7 +182,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 아까 1의 과정에서 로그인 화면을 받게 됐다. 그래서 로그인 화면에 우리가 설정했던 `user`, `123`이라는 아이디와 비밀번호를 입력했을 때!! 생기는 일에 대한 흐름을 보도록 하자.
 
-![security2_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_7.png?raw=True){: width="75%"}
+![security2_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_7.png?raw=True){: width="85%"}
 
 - #1 : 아까 위에서와 같은 break point이다. 하지만 이번에는 다른 결과가 나온다. 왜냐하면 로그인 화면에서 login form `action='/login_proc'`이기 때문에 `AntPathRequestMatcher(/login_proc)`에서 일치하기에 #1 method는 true를 return하기 때문이다.
 
@@ -190,17 +190,17 @@ protected void configure(HttpSecurity http) throws Exception {
 
     - 우리가 설정한 로그인 인증을 처리하는 URL은 `/login_proc`이다.
 
-      ![security2_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_10.png?raw=True){: width="70%"}
+      ![security2_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_10.png?raw=True){: width="85%"}
 
     - `/`로 접근할 때
 
-      ![security2_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_8.png?raw=True){: width="70%"}
+      ![security2_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_8.png?raw=True){: width="85%"}
 
       오른쪽 밑에 흰색 박스를 보면, 경로가 `/`임을 알 수 있다. 로그인 인증을 처리하는 경로와 달랐기 때문에 해당 method는 `false`를 return한 것.
 
     - `/login_proc`으로 접근할 때
 
-      ![security2_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_9.png?raw=True){: width="70%"}
+      ![security2_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_9.png?raw=True){: width="85%"}
 
       오른쪽 밑에 흰색 박스를 보면, 경로가 `/login_proc`임을 알 수 있다. 로그인 인증을 처리하는 경로와 같기에 해당 method는 `true`를 return한 것.
 
@@ -208,7 +208,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 - #2 : 아까 맨 처음에 흐름에 대해서 보고 시작했다. 알맞은 로그인 경로라면 인증객체를 만든다고 하였는데 지금 코드가 인증객체를 만드는 코드이다. 해당 `attemptAuthentication()` method를 보게 되면, 현재 `AbstractAuthenticationProcessingFilter` class의 abstract method이다. 따라서 이제 진짜 `UserPasswordAuthenticationFilter` 객체를 봐주는 것이다.
 
-  ![security2_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_11.png?raw=True){: width="70%"}
+  ![security2_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_11.png?raw=True){: width="85%"}
 
   - #2-1 : 지금 보면, username, password를 request 객체로부터 받아와서 인증객체에 저장하는 모습을 볼 수 있다. 연두색 박스 끝을 보면, 우리가 설정했던 id, pw인 `user`, `123`을 볼 수 있다.
   - #2-2 : 인증객체를 만들었으면 filter는 `AuthenticationManager`에게 인증처리를 맡긴다고 했다. 따라서 생성한 인증객체를 반환하고 있는 것을 볼 수 있다.
@@ -219,13 +219,13 @@ protected void configure(HttpSecurity http) throws Exception {
 
 위에서 전체 흐름에 대해 정리할 때, 인증객체에 대한 실질적인 인증 처리는 `AuthenticationManager`가 `AuthenticationProvider`에게 위임한다고 했다. 아까 2번의 `#2-2`과정을 자세히 보도록 하자.
 
-![security2_12](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_12.png?raw=True){: width="70%"}
+![security2_12](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_12.png?raw=True){: width="80%"}
 
 `ProviderManager`는 `AuthenticationProvider`interface의 구현체이고, 내부적으로 `Provider` 객체들을 보관하고 있다. 그래서 위 코드의 초록색 줄은 `Provider`들 중에서 현재 form 인증 방식을 처리할 provider를 찾는 것이다.
 
 <br>
 
-![security2_13](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_13.png?raw=True){: width="70%"}
+![security2_13](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_13.png?raw=True){: width="80%"}
 
 알맞은 provider를 찾으면 위 사진에 표시된 초록색 줄로 가게 된다. 173번 line을 보면, `DaoAuthenticationProvider`인 것 같다. 이 provider가 parameter로 받은 인증 객체를 보고 성공 또는 실패를 판단하게 된다.
 
@@ -233,17 +233,17 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ...? `DaoAuthenticationProvider`를 봤더니 authenticate method가 없었다. 그렇다는 뜻은 상속을 받았다는 뜻이기에 부모 클래스를 봤더니,
 
-![security2_14](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_14.png?raw=True){: width="65%"}
+![security2_14](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_14.png?raw=True){: width="75%"}
 
 `AbstractUserDetailsAuthenticationProvider` class임을 알게 됐다. 따라서 해당 클래스에서 authenticate method를 찾았다.
 
 <br>
 
-![security2_15](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_15.png?raw=True){: width="70%"}
+![security2_15](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_15.png?raw=True){: width="80%"}
 
 authenticate method 안이다. 실질적인 인증처리를 하고 성공을 했다면 `createSuccessAuthentication()` method를 호출하게 되고,
 
-![security2_16](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_16.png?raw=True){: width="70%"}
+![security2_16](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_16.png?raw=True){: width="80%"}
 
 호출된 method는 *인증에 성공한 결과*를 return하게 됨을 볼 수 있다.
 
@@ -251,7 +251,7 @@ authenticate method 안이다. 실질적인 인증처리를 하고 성공을 했
 
 ## 4. 인증에 성공한 객체는 SecurityContext에 저장!
 
-![security2_17](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_17.png?raw=True){: width="75%"}
+![security2_17](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_17.png?raw=True){: width="85%"}
 
 위 사진의 노란색, 빨간색 박스는 이해를 돕기 위해 1~3과정을 우리가 처음에 정리했던 흐름에 맞춰서 사진을 삽입해놓은 것이다. 
 
@@ -259,7 +259,7 @@ authenticate method 안이다. 실질적인 인증처리를 하고 성공을 했
 
 <br>
 
-![security2_18](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_18.png?raw=True){: width="75%"}
+![security2_18](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_18.png?raw=True){: width="85%"}
 
 같은 class `AbstractAuthenticationProcessingFilter`안의 method인 `successfulAuthentication()` method이다.
 
@@ -277,11 +277,11 @@ authenticate method 안이다. 실질적인 인증처리를 하고 성공을 했
 
 ## 5. 아까 흐름과 같이 보면서 정리!!!
 
-![security2_19](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_19.png?raw=True){: width="70%"}
+![security2_19](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_19.png?raw=True){: width="80%"}
 
 <br>
 
-![security2_20](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_20.png?raw=True){: width="70%"}
+![security2_20](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security2_20.png?raw=True){: width="80%"}
 
 <br>
 

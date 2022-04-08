@@ -243,7 +243,7 @@ public class Thread implements Runnable {
 }
 ```
 
-자세한 내용까지는 잘 모르겠지만 `Thread` class는 `Runnable` interface의 구현체라는 사실을 알 수 있었다. 둘로 thread를 생성했을 때 차이점은 **'구현하느냐' || '상속받느냐'의 차이**로 구분할 수 있는데 여기서 `Runnable`을 일반적으로 쓰이는 이유가 나타난다.
+자세한 내용까지는 잘 모르겠지만 `Thread` class는 `Runnable` interface의 구현체라는 사실을 알 수 있었다. 둘로 thread를 생성했을 때 차이점은 **'구현하느냐' or '상속받느냐'의 차이**로 구분할 수 있는데 여기서 `Runnable`을 일반적으로 쓰이는 이유가 나타난다.
 
 > `Runnable` object, is more general, because the `Runnable` object can subclass a class other than `Thread`. 
 
@@ -255,7 +255,7 @@ public class Thread implements Runnable {
 
 ## Pausing Execution with Sleep
 
-`Thread.sleep()` method 특정 기간동안 현재 실행중인 thread를 중지하게 해준다. 이는 실행 중일 수 있는 다른 application || thread에게 processor의 시간을 사용할 수 있게 해주는 효율적인 방법이다. 그러나 운영체제에 의해 기본으로 제공되는 기능에 의해 제한되기 때문에 중지되는 시간이 정확하다는 보장이 없다.
+`Thread.sleep()` method 특정 기간동안 현재 실행중인 thread를 중지하게 해준다. 이는 실행 중일 수 있는 다른 application or thread에게 processor의 시간을 사용할 수 있게 해주는 효율적인 방법이다. 그러나 운영체제에 의해 기본으로 제공되는 기능에 의해 제한되기 때문에 중지되는 시간이 정확하다는 보장이 없다.
 
 > However, these sleep times are not guaranteed to be precise, because they are limited by the facilities provided by the underlying OS. 
 

@@ -255,7 +255,7 @@ Session과 `remember-me` 2개의 쿠키가 있는 것을 볼 수 있다.
 
 - 상황 : 위 과정을 거친 후, session을 제거. 그 후 새로고침을 진행하여 `remember-me`기능이 어떻게 동작하는지 확인할 것
 
-  ![security4_13](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security4_13.png?raw=True){: width="65%"}
+  ![security4_14](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/Spring-security/img/security4_14.png?raw=True){: width="75%"}
 
   session을 지운 후 갖고 있는 cookie들이다!
 

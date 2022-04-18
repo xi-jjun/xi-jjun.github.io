@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What happening when enter the googlel.com"
+title: "What happening when enter the 'www.google.com'"
 author: "xi-jjun"
 tags: Network
 

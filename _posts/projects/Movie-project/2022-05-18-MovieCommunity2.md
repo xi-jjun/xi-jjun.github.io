@@ -32,15 +32,20 @@ tags: project-movie-community
 ## API 설계
 
 ```text
-[ Review API : 영화 리뷰에 대한 API ]
+빨간색 글씨 : 관리자(서비스제공자)만이 쓸 수 있음.
+파란색 글씨 : 관련된 사용자만이 할 수 있음.
+연두색 글씨 : 개발 TEST용 API
+
+
+[ Review API ]
 어떤 Movie에 적힌 Review list 조회 : GET - /reviews/movies/{movieId}
 Review 1개 조회 : GET - /reviews/{reviewId}
 어떤 Movie에 대한 Review 생성 : POST - /reviews/movies/{movieId}
-어떤 Movie에 대한 Review 수정 : PATCH - /reviews/movies/{movieId}
-어떤 Movie에 대한 Review 삭제 : DELETE - /reviews/movies/{movieId}
+어떤 Movie에 대한 Review 수정 : PATCH - /reviews/{reviewId}
+어떤 Movie에 대한 Review 삭제 : DELETE - /reviews/{reviewId}
 
 
-[ Movie API : 영화에 대한 API ]
+[ Movie API ]
 Movie list 조회 : GET - /movies
 어떤 Movie detail 조회 : GET - /movies/{movieId}
 Movie 목록에 영화 추가 : POST - /movies
@@ -48,7 +53,7 @@ Movie 목록에 영화 추가 : POST - /movies
 어떤 Movie 정보 삭제 : DELETE - /movies/{movieId}
 
 
-[ Holiday API : 기념일 API ]
+[ Holiday API ]
 Holiday(기념일)에 따른 Movie list 조회 : GET - /holiday/{holidayName}/movies
 Holiday 추가 : POST - /holiday
 Holiday 수정 : PATCH - /holiday/{holidayId}
@@ -67,8 +72,9 @@ Posting 생성 : POST - /postings
 어떤 Posting 1개에 대한 Comment list 조회 : GET - /comments/postings/{postingId}
 어떤 Comment 1개 조회 : GET - /comments/{commentId}
 어떤 Posting 1개에 대한 Comment 생성 : POST - /comments/postings/{postingId}
-어떤 Posting 1개에 대한 Comment 수정 : PATCH - /comments/postings/{postingId}
-어떤 Posting 1개에 대한 Comment 삭제 : DELETE - /comments/postings/{postingId}
+어떤 Posting 1개에 대한 Comment 수정 : PATCH - /comments/{commentId}
+어떤 Posting 1개에 대한 Comment 삭제 : DELETE - /comments/{commentId}
+
 
 
 [ Member API ]
@@ -84,24 +90,28 @@ login 화면 조회 : GET - /login
 login : POST - /login
 
 
-[ Movie Lover Test API(덕후력 테스트 API) ]
-Test 질문 list 제공(7문항) : GET - /movie-lover-tests
-Test 질문 결과 제공 : POST - /movie-lover-tests (테스트 결과 return rank)
-Test 질문 DB에 추가 : POST - /movie-lover-tests/questions
-Test 질문 DB에 수정 : PATCH - /movie-lover-tests/questions/{questionId}
-Test 질문 DB에 삭제 : DELETE - /movie-lover-tests/questions/{questionId}
+[ Exam API(시험 API) ]
+Exam(시험) list 조회 : GET - /exam
+Exam 1개 조회 : GET - /exam/{testId}
+Exam 추가 : POST - /exam
+Exam 수정 : PATCH - /exam/{examId}
+Exam 삭제 : DELETE - /exam/{examId} (연관된 Question 모두 같이 삭제)
+해당하는 시험에 대한 Question list(시험문제:7문제) 조회 : GET - /exam/{examId}/questions
+Question 1개 추가 : POST - /exam/{examId}/questions
+Question 1개 수정 : PATCH -/questions/{questionId}
+Question 1개 삭제 : DELETE -/questions/{questionId}
 
 
 [ Diary Journal API : Diary(일기장), Journal(그날 일기) ]
-사용자 Diary list 조회 : GET - /members/{memberId}/diary
-Diary(일기장) 추가 : POST - /members/{memberId}/diary
-Diary(일기장) 정보 수정 : PATCH - /members/{memberId}/diary/{diaryId}
-Diary(일기장) 삭제 : DELETE - /members/{memberId}/diary/{diaryId}
-사용자 Diary의 Journal list 조회 : GET - /members/{memberId}/diary/{diaryId}/journals
-사용자 Diary의 Journal 1개 조회 : GET - /members/{memberId}/diary/{diaryId}/journals/{journalId}
-Journal(일기) 쓰기 : POST - /members/{memberId}/diary/{diaryId}/journals
-Journal 수정 : PATCH - /members/{memberId}/diary/{diaryId}/journals/{journalId}
-Journal 삭제 : DELETE - /members/{memberId}/diary/{diaryId}/journals/{journalId}
+사용자 Diary list 조회 : GET - /diary
+Diary(일기장) 추가 : POST - /diary
+Diary(일기장) 정보 수정 : PATCH -/diary/{diaryId}
+Diary(일기장) 삭제 : DELETE - /diary/{diaryId}
+사용자 Diary의 Journal list 조회 : GET -/diary/{diaryId}/journals
+사용자 Diary의 Journal 1개 조회 : GET -/diary/{diaryId}/journals/{journalId}
+Journal(일기) 쓰기 : POST - /diary/{diaryId}/journals
+Journal 수정 : PATCH - /journals/{journalId}
+Journal 삭제 : DELETE - /journals/{journalId}
 
 
 [ Recommendation API (추천 알고리즘 API) ]
@@ -119,6 +129,11 @@ Entity 에 대한 API를 위와 같이 정리해봤다. 결국엔 DB를 바꿔�
 5. `Diary`, `Journal` entity 추가.
    - 일기장은 여러개다.
    - 1개의 일기장에는 여러개의 일기를 쓸 수 있다. 일기에는 일기내용, 그날의 기분 을 쓸 수 있다는 요구사항이 존재하기에 추가.
+6. `Exam`, `Question` entity를 추가.
+   - 요구사항에 '영화 덕후력 테스트' 가 있었고, 해당 시험을 구현하기 위해 2개의 entity 생성.
+   - `Exam` : 시험의 종류.
+   - `Question` : `Exam` 을 이룰 수 있는 질문들.
+   - 생각하고 있는 것은 1개의 시험에 대략 5~7개의 질문들을 랜덤하게 넣어줄 생각이다.
 
 <br>
 
@@ -134,6 +149,8 @@ Entity 에 대한 API를 위와 같이 정리해봤다. 결국엔 DB를 바꿔�
 - `Holiday` : 기념일 entity. 요구사항 중, 기념일에 따른 영화 추천을 하기위해 만들었다.
 - `Diary` : 일기장 entity. 일기는 1개의 글이지만, 일기장은 일기를 담고있는 하나의 묶음이라고 생각하고 만들었다. 사용자가 여러개의 일기장을 갖질 수 있게 하였다.
 - `Journal` : 일기 entity. 일기는 직접 우리가 쓴 일기 내용이다.
+- `Exam` : 시험지 entity. 어떤 종류의 시험인지 나타내준다.
+- `Question` : 질문 entity. 어떤 시험지에 대한 나올 수 있는 질문들을 저장하기 위한 table이다.
 
 뭐가 좀 더 많이 추가됐다. API설계와 DB설계가 끝났기에 내일부터는 본격적으로 개발에 들어갈 것이다.
 

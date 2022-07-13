@@ -54,7 +54,7 @@ RDB를 설계할 때 중복된 데이터를 최소화하기 위한 설계를 목
 
 다음 예시를 보도록 하자.
 
-![normalization1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/database/img/normalization1_4.png?raw=True){: width="70%"}
+![normalization1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/database/img/normalization1_4.png?raw=True){: width="80%"}
 
 해당 table에서 PK는 `회원번호` 이다. `이름, 나이, 거주지역`은 모두 PK인 `회원번호`에 종속된다. 따라서 `이름, 나이, 거주지역`은 모두 `full functional dependency` 라고 할 수 있다. 
 
@@ -72,7 +72,7 @@ PK는 `name` 과 `roll_no` 2개로 이뤄졌다고 하자. 위 table을 보면, 
 
 다음 예시를 보도록 하자.
 
-![normalization1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/database/img/normalization1_3.png?raw=True){: width="70%"}
+![normalization1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/database/img/normalization1_3.png?raw=True){: width="80%"}
 
 위 그림을 보면, PK가 `고객ID`와 `제품코드`로 이뤄진 composite PK임을 알 수 있다. `주문상품` 속성은 `제품코드`에 대해서만 영향을 받는다. 왜냐면 제품코드에 따라 주문상품이 정해지기 때문이다. 따라서 `제품코드→주문상품`의 관계가 이뤄지는 것이고, 이는 PK전체가 아닌, `제품코드`만으로도 식별이 가능하기에 `Partial functional dependency` 이다. 
 

@@ -53,11 +53,11 @@ for (int i = 0; i < N; i++) {
 
 이다. 당연하게도 해당 기능에 대한 코드는 디테일에 대한 차이는 있어도 결국엔 같은 기능을 할 수 밖에 없게 된다. 같은 기능을 매번 개발하는 것은 반복되는 작업이기에 지루하고 개발자는 정작 집중해야할 비니지스 로직보다 해당 코드들을 복사 붙여넣기 하기에 바빠진다.
 
-> **따라서 이러한 반복된 작업, 데이터를 모으는 방법에 대한 명세를 interface로 모아놓은 것이 `Collection` 이다**
+> **따라서 이러한 반복된 작업, 데이터를 모으는 방법에 대한 명세를 interface로 모아놓은 것이 `Collection Framework` 이다**
 
 <br>
 
-## Collection 주요 interface
+## Collection Framework 주요 interface
 
 1. List
 2. Set

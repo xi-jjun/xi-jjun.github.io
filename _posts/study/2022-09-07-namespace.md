@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Namespace가 뭐에요"
+title: "Namespace가 뭐예요"
 author: "xi-jjun"
 tags: Study
 

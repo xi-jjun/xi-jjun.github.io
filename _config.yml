@@ -1,12 +1,13 @@
 # Site settings
 title:          xi-jjun's 개발 블로그
-description:    "개발자가 되고 싶어요"
+description:    "더 나은 개발자가 되기 위해"
 url:            "https://xi-jjun.github.io"
 repository               : "xi-jjun/blog-comments"
+future                   : true
 comments:
   provider               : "utterances"
   utterances:
-    theme                : "github-light" # (default), "github-dark"
+    theme                : "github-dark" # (default), "github-dark"
     issue_term           : "pathname" # (default)
 
 # Google Analytics
@@ -37,7 +38,7 @@ plugins:
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
-paginate:       5
+paginate:       7
 
 # Excludes
 exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]

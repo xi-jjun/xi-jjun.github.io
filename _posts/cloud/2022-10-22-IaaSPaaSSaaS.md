@@ -2,7 +2,8 @@
 layout: post
 title: "IaaS vs PaaS vs SaaS"
 author: "xi-jjun"
-tags: cloud
+tags: infra
+published: true
 
 ---
 

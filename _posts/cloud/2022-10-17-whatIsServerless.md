@@ -2,7 +2,7 @@
 layout: post
 title: "Serverless란?"
 author: "xi-jjun"
-tags: cloud
+tags: infra
 
 ---
 

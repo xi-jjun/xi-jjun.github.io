@@ -138,7 +138,7 @@ dependencies {
 
 <br>
 
-![awslambdasimpleapp1_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_1.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_1.png?raw=True){: height="60%"}
 
 package구성은 위와 같이 했다. Main class가 있는 위치에 아래와 같은 `Handler` class를 만들어준다.
 
@@ -202,7 +202,7 @@ Possible solution:
 
 위와 같은 에러가 발생했다. 의존성은 알맞게 넣어준 것 같은데 [stackoverflow](https://stackoverflow.com/questions/55077143/failure-to-find-org-springframework-cloudspring-cloud-dependenciespom)에서는 `spring cloud version`을 명시하라고 했다. 정확하게 짚고 넘어가기 위해서 [공식문서](https://spring.io/projects/spring-cloud/)에 갔다...
 
-![awslambdasimpleapp1_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_2.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_2.png?raw=True){: height="60%"}
 
 > If you an existing Spring Boot app you want to add Spring Cloud to that  app, the first step is to determine the version of Spring Cloud you  should use. The version you use in your app will depend on the version of Spring  Boot you are using.
 
@@ -261,7 +261,7 @@ ext {
 curl -H "Content-Type: text/plain" localhost:8080/reverse -d Hello
 ```
 
-![awslambdasimpleapp1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_3.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_3.png?raw=True){: height="60%"}
 
 문자열이 `olleH`로 잘 뒤집어진 것을 확인할 수 있었다.
 
@@ -271,25 +271,25 @@ curl -H "Content-Type: text/plain" localhost:8080/reverse -d Hello
 
 ## Create AWS Lambda Function
 
-![awslambdasimpleapp1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_4.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_4.png?raw=True){: height="60%"}
 
 aws 에 로그인을 한 뒤에 위 사진에서 오른쪽 위 `create function` 버튼을 클릭한다.
 
 <br>
 
-![awslambdasimpleapp1_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_5.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_5.png?raw=True){: height="60%"}
 
 function name은 기능에 알맞게 지어줬다. 현재 `StringReverse-Function`프로젝트는 `Java 8`이기에 runtime환경을 java8 on aws linux2 로 해줬다.
 
 `IAM` role같은 경우는 실제 백발백준 프로젝트라면 직접 `cloudwatch`와 같은 서비스에도 접근 권한을 줬을 것이다. 그러나 현재는 연습이기 때문에 lambda생성시 자동으로 생성되는
 
-![awslambdasimpleapp1_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_6.png?raw=True){: height="70%"} 
+![awslambdasimpleapp1_6](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_6.png?raw=True){: height="70%"} 
 
 `AWSLambdaBasicExecutionRole`권한을 줬음을 볼 수 있다.
 
 <br>
 
-![awslambdasimpleapp1_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_7.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_7](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_7.png?raw=True){: height="70%"}
 
 오른쪽에 `Upload from` 을 누르면 jar 또는 zip file로 lambda에 배포할 수 있다. 
 
@@ -297,7 +297,7 @@ function name은 기능에 알맞게 지어줬다. 현재 `StringReverse-Functio
 
 ## Test Lambda function
 
-![awslambdasimpleapp1_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_8.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_8](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_8.png?raw=True){: height="70%"}
 
 Aws lambda에서는 테스트를 진행할 수 있는데 보다시피 에러가 발생했다. 자세히 보도록 하자.
 
@@ -333,7 +333,7 @@ public class Handler {
 }
 ```
 
-![awslambdasimpleapp1_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_9.png?raw=True){: height="100%"}
+![awslambdasimpleapp1_9](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_9.png?raw=True){: height="100%"}
 
 `me.practice.stringreverseapi.Handler::reverse`로 바꿔줬다.
 
@@ -352,7 +352,7 @@ public class Handler {
 
 이게 어떻게된 것일까...? 이 부분에 대해서 몇시간의 삽질 끝에.... 결국엔 또 [공식문서](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/java-package.html)로 회귀했다. 
 
-![awslambdasimpleapp1_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_10.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_10](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_10.png?raw=True){: height="70%"}
 
 음... 한글이라 약간 헷갈려서 잠시 영어로 바꾼 뒤 해석해보자.
 
@@ -376,13 +376,13 @@ task buildZip(type: Zip) {
 ./gradlew buildZip
 ```
 
-![awslambdasimpleapp1_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_11.png?raw=True){: height="50%"}
+![awslambdasimpleapp1_11](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_11.png?raw=True){: height="50%"}
 
 > This build configuration produces a deployment package in the `build/distributions` directory.
 
 `build/distributions` directory에 build결과물이 생성된다고 한다. 
 
-![awslambdasimpleapp1_12](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_12.png?raw=True){: height="50%"}
+![awslambdasimpleapp1_12](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_12.png?raw=True){: height="50%"}
 
 제발 잘 되길 바라면서...
 
@@ -402,15 +402,15 @@ aws lambda update-function-code --function-name MY_FUNCTION_NAME --zip-file file
 
 ## RE:RE: Test Lambda function
 
-![awslambdasimpleapp1_13](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_13.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_13](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_13.png?raw=True){: height="70%"}
 
 됐...?
 
-![awslambdasimpleapp1_14](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_14.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_14](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_14.png?raw=True){: height="70%"}
 
 ?? `olleH` 가 나와야 하는데...?
 
-![awslambdasimpleapp1_15](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_15.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_15](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_15.png?raw=True){: height="70%"}
 
 제 output어디간지 아시는 분~?
 
@@ -452,11 +452,11 @@ me.practice.stringreverseapi.Handler::handleRequest
 
 ## RE:RE:RE: Test Lambda function
 
-![awslambdasimpleapp1_16](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_16.png?raw=True){: height="70%"}
+![awslambdasimpleapp1_16](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_16.png?raw=True){: height="70%"}
 
 두근거린다... 제발... 착하게 살테니 한번만...
 
-![awslambdasimpleapp1_17](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/cloud/img/awslambdasimpleapp1_17.png?raw=True){: height="60%"}
+![awslambdasimpleapp1_17](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp1_17.png?raw=True){: height="60%"}
 
 정상적으로 동작한다!!
 

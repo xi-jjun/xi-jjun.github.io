@@ -414,7 +414,23 @@ aws lambda update-function-code --function-name MY_FUNCTION_NAME --zip-file file
 
 제 output어디간지 아시는 분~?
 
-문제의 원인은 `deserialization`이라고 생각했다. 왜냐하면 포스팅의 첫 부분에 `handler function example code`를 보면 알 수 있다. 현재 내가 spring cloud로 작성한 코드는 아래와 같다.
+<br>
+
+우리는 dependency를 받을 때
+
+```groovy
+implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.2.1'
+```
+
+를 받았던 것을 기억할 것이다. 왜 `aws-lambda-java-core`가 필요할까?
+
+> **`com.amazonaws:aws-lambda-java-core (required)`** – Defines handler method interfaces and the context object that the runtime passes to the handler. If you define your own input types, this is the only library that you need.
+
+그러니깐 aws lambda handler가 어떤 입력이 들어오는지 알아야 할 것 아닌가. aws lambda runtime에 handler로 오는 객체를 처리하기 위해서 필요한 것인데 지금 우리의 코드는 그렇지 않다. 이제 해결해 보도록 하자.
+
+<br>
+
+현재 내가 spring cloud로 작성한 코드는 아래와 같다.
 
 ```java
 @Component
@@ -429,6 +445,11 @@ public class Handler {
 그러나 예제의 코드는 interface를 구현했기에 똑같이 바꾸고 해봤다.
 
 ```java
+...
+import com.amazonaws.services.lambda.runtime.Context; 
+import com.amazonaws.services.lambda.runtime.RequestHandler; // aws lambda 와 관련된 package name을 가졌음을 볼 수 있다.
+...
+
 public class Handler implements RequestHandler<String, String> {
 	@Override
 	public String handleRequest(String input, Context context) {

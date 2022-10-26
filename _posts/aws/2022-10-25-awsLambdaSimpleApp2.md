@@ -112,7 +112,7 @@ me.practice.awslambdademo.handlers.ItemHandler
 
 ### Project package
 
-![awslambdasimpleapp2_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp2_3.png?raw=True){: height="50%"}
+![awslambdasimpleapp2_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/awslambdasimpleapp2_3.png?raw=True){: height="30%"}
 
 <br>
 

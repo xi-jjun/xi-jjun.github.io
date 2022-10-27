@@ -16,10 +16,12 @@ tags: aws
 ```
 
 ```json
-status : 200
-data : {
-	profileImage : GITHUB_PROFILE_IMAGE_URL,
-	name : GITHUB_USER_NAME
+{
+  status : 200,
+  data : {
+    profileImage : GITHUB_PROFILE_IMAGE_URL,
+    name : GITHUB_USER_NAME
+  }
 }
 ```
 
@@ -99,7 +101,7 @@ docker images
 ![ecsFargate1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/aws/img/ecsFargate1_3.png?raw=True){: height="90%"}
 
 ```shell
-docker -d -p OUTER_PORT:DOCKER_EXPOSED_PORT CONTAINER_ID
+docker run -d -p OUTER_PORT:DOCKER_EXPOSED_PORT CONTAINER_ID
 ```
 
 `curl` command로 확인을 하기 위해 `demon`으로 실행시켰다. 결과적으로 우리가 만들었던 결과대로 잘 나온 것을 볼 수 있다.

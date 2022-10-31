@@ -294,3 +294,5 @@ void convertTextToOppositeTest(String text, String expected) {
 
 [Pattern class - Java11 docs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
 
+[@CsvSource - ignoreLeadingAndTrailingWhitespace](https://junit.org/junit5/docs/snapshot/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/CsvSource.html)
+

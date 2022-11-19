@@ -22,7 +22,7 @@ tags: kotlin
 
 ```kotlin
 fun main() {
-		println("Hello Kotlin!")
+    println("Hello Kotlin!")
 }
 ```
 
@@ -30,7 +30,7 @@ fun main() {
 
 ```kotlin
 fun main(args: Array<String>) {
-		println(args.contentToString())
+    println(args.contentToString())
 }
 ```
 
@@ -67,7 +67,7 @@ Hello Kotlin
 
 ```kotlin
 fun add(num1: Int, num2: Int): Int {
-		return num1 + num2
+    return num1 + num2
 }
 ```
 
@@ -79,7 +79,7 @@ fun add(num1: Int, num2: Int) = num1 + num2
 
 ```kotlin
 fun add(num1: Int, num2: Int): Unit {
-		println("$num1 + $num2 = ${num1 + num2}")
+    println("$num1 + $num2 = ${num1 + num2}")
 }
 ```
 
@@ -95,7 +95,7 @@ fun add(num1: Int, num2: Int): Unit {
 
 ```kotlin
 fun add(num1: Int, num2: Int) {
-		println("$num1 + $num2 = ${num1 + num2}")
+    println("$num1 + $num2 = ${num1 + num2}")
 }
 ```
 
@@ -143,10 +143,10 @@ fun add(num1: Int, num2: Int) = println("$num1 + $num2 = ${num1 + num2}")
 
 ```kotlin
 fun max(a: Int, b: Int): Int {
-		if (a > b) {
-				return a
-		}
-		return b
+    if (a > b) {
+        return a
+    }
+    return b
 }
 ```
 
@@ -170,14 +170,14 @@ max_number = a if a > b else b
 ```kotlin
 val names = listOf("김재준", "김근우", "문명석")
 for (name in names) {
-		println("$name 는 동아리 회원입니다.")
+    println("$name 는 동아리 회원입니다.")
 }
 ```
 
 ```kotlin
 val names = listOf("김재준", "류도연", "이찬희")
 for (index in names.indices) {
-		println("$index's member is $names[index]")
+    println("$index's member is $names[index]")
 }
 ```
 
@@ -191,8 +191,8 @@ for (index in names.indices) {
 val items = listOf("apple", "banana", "kiwifruit")
 var index = 0
 while (index < items.size) {
-		println("item at $index is ${items[index]}")
-		index++
+    println("item at $index is ${items[index]}")
+    index++
 }
 ```
 
@@ -216,7 +216,7 @@ fun describe(obj: Any): String =
 
 ```java
 String describe(Object obj) {
-  switch ...
+    switch ...
 }
 ```
 
@@ -259,7 +259,7 @@ static void test(Object o) {
 val start = 1
 val end = 4
 for (number in start..end) {
-		println(number)
+    println(number)
 }
 ```
 
@@ -282,12 +282,12 @@ for (x in 1..10 step 2) {
 
 println("\n5 to 2 by step 1")
 for (x in 5 downTo 1) {
-    println("${x} ")
+    print("${x} ")
 }
 
 println("\n7 to 1 by step 2")
 for (x in 7 downTo 1 step 2) {
-    println("${x} ")
+    print("${x} ")
 }
 ```
 
@@ -318,7 +318,7 @@ func hello(name: String) {
 ```kotlin
 // kotlin code
 fun hello(name: String) {
-		print("Hello $name!")
+    print("Hello $name!")
 }
 ```
 

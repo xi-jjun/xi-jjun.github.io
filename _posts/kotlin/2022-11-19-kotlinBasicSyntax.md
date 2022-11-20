@@ -175,7 +175,7 @@ for (name in names) {
 ```
 
 ```kotlin
-val names = listOf("김재준", "류도연", "이찬희")
+val names = listOf("김민협", "류도연", "이찬희")
 for (index in names.indices) {
     println("$index's member is $names[index]")
 }
@@ -212,7 +212,7 @@ fun describe(obj: Any): String =
     }
 ```
 
-`when`... 진짜 생소했다. 왜냐하면 처음 들어보니깐! 눈치껏 보자면 `Java`의 `switch`를 표현하는 것 같았다. 하지만 `Java`보다 뤌씬 간결해진 코드를 볼 수 있다. 기존 `Java`에서는
+`when`... 진짜 생소했다. 왜냐하면 처음 들어보니깐! 눈치껏 보자면 `Java`의 `switch`를 표현하는 것 같았다. 하지만 `Java`보다 훨씬 간결해진 코드를 볼 수 있다. 기존 `Java`에서는
 
 ```java
 String describe(Object obj) {

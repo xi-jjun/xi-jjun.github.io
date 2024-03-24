@@ -2,7 +2,7 @@
 layout: post
 title: "Container 란?"
 author: "xi-jjun"
-tags: Study, Linux, Container
+tags: Study Container
 
 
 ---

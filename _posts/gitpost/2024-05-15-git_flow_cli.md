@@ -65,7 +65,7 @@ Now, start committing on your feature. When done, use:
      git flow feature finish project_init
 ```
 
-![git_flow_init_fail](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/git_flow_init_fail.png?raw=True){: width="70%"}
+![git_flow_init_fail](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/git_flow_init_fail.png?raw=True){: width="70%"}
 
 ... `/` 가 빠졌다. 다시 초기화하자.
 
@@ -95,7 +95,7 @@ Version tag prefix? []
 Hooks and filters directory? [/Users/kimjaejun/workspace/spring-practices/.git/hooks]
 ```
 
-![git_flow_init_success](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/git_flow_init_success.png?raw=True){: width="70%"}
+![git_flow_init_success](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/git_flow_init_success.png?raw=True){: width="70%"}
 
 `/` 까지 포함되어 브랜치가 잘 생성되는 것을 확인했다!
 
@@ -222,7 +222,7 @@ git log --graph --oneline --decorate --all
 * 87af359 (practiceproject_init) Initial commit
 ```
 
-![git_merge_feature_and_release](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/git_merge_feature_and_release.png?raw=True){: width="70%"}
+![git_merge_feature_and_release](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/git_merge_feature_and_release.png?raw=True){: width="70%"}
 
 릴리즈 브랜치(`20240515_1633`)이 develop, master에 각각 잘 merge된 것을 확인할 수 있다.
 

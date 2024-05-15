@@ -42,11 +42,11 @@ tags: Git
 
 먼저 테스트 용으로 repository를 하나 생성하였다.
 
-![githubactions1_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/githubactions1_1.png?raw=True){: width="70%"}
+![githubactions1_1](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/githubactions1_1.png?raw=True){: width="70%"}
 
 위 사진을 보게 되면, `./github/workflows` 라는게 보인다.
 
-![githubactions1_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/githubactions1_2.png?raw=True){: width="70%"}
+![githubactions1_2](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/githubactions1_2.png?raw=True){: width="70%"}
 
 여기에 내가 원하는 workflow를 yml file로 생성하면 되는 것이다.
 
@@ -106,17 +106,17 @@ workflow에서는 job이라고 불리는 작업을 순서대로 혹은 병렬적
 
 요즘 TDD에 대해 관심이 생겼고, 이 또한 이번 프로젝트에서 사용해보기 위해서 `Next-Step` 의 강의를 하나 사서 듣게 됐다. 그리고 해당 강의에서는 어플리케이션 기능을 구현하고, 테스트 케이스를 작성해야할 일이 많기에 github actions로 특정 branch에 push를 하게 될 때 자동으로 테스트가 되게 해보고 싶었다.
 
-![githubactions1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/githubactions1_3.png?raw=True){: width="70%"}
+![githubactions1_3](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/githubactions1_3.png?raw=True){: width="70%"}
 
 `new workflow` 를 누른 뒤,
 
-![githubactions1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/githubactions1_4.png?raw=True){: width="70%"}
+![githubactions1_4](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/githubactions1_4.png?raw=True){: width="70%"}
 
 `Java with Gradle` 를 클릭하면 된다. 직접 만드는 것도 좋지만, 반복되는 작업인 만큼 웬만한 작업에 대해서는 이미 만들어진 스크립트가 존재했었다. 따라서 나는 현재 gradle build, test를 자동으로 하고 싶었기에 해당 스크립트로 진행했다.
 
 <br>
 
-![githubactions1_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/git/img/githubactions1_5.png?raw=True){: width="70%"}
+![githubactions1_5](https://github.com/xi-jjun/xi-jjun.github.io/blob/master/_posts/gitpost/img/githubactions1_5.png?raw=True){: width="70%"}
 
 스크립트에서 trigger branch정도만 내가 원하는 것으로 수정해준 뒤, 해당 branch로 push를 하게 되면 위와 같이 가상의 서버에서 내가 의도한 동작이 자동으로 수행됨을 볼 수 있다. 해당 workflow 코드는 [여기서](https://github.com/xi-jjun/java-baseball-playground) 볼 수 있다.
 

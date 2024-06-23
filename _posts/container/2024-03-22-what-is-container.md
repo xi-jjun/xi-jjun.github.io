@@ -15,8 +15,7 @@ tags: Study Container
 
 ## 개요
 
-container 환경에서 어플리케이션을 실행하고 있으나, 관련 지식이 부족한 듯하여 container deep dive가 필요하다고 생각이 됐고, 
-회사 내에서 필요에 의해 특정 서비스의 로컬 개발환경을 container로 구성하려고 하기에 관련된 리서치를 하기 위한 목적이다.
+container 환경에서 어플리케이션을 실행하고 있으나, 관련 지식이 부족한 듯하여 container deep dive가 필요하다고 생각이 됐고, 회사 내에서 필요에 의해 특정 서비스의 로컬 개발환경을 container로 구성하려고 하기에 관련된 리서치를 하기 위한 목적이다.
 
 [docker roadmap](https://roadmap.sh/docker)을 따라서 하나씩 정리할 예정이다.
 
@@ -46,7 +45,7 @@ containerization, container 둘 다 중요한 부분은, "다른 환경에 영�
 
 사실 이 질문에 대한 대답은 굳이 검색을 하지 않더라도, 개발을 해본 사람들이라면 어느정도 답변을 할 수 있으리라 생각한다. 나도 이러한 환경이 필요했을 때가 여럿 있었는데, **MySQL 로컬 개발환경 셋팅** 때가 가장 절실했고 이 때 가장 많이 컨테이너 덕을 본 것 같다.
 
-현재 내 컴퓨터에는 사이드 프로젝트에 의해 MySQL 서버 2개가 필요했다. database를 나눠서 진행해도 상관없으나 기본적으로 모든 곳에서 동일하게 셋팅되어야할 개발환경인데, 어떤 사람은 database만 나눠서 셋팅하고, 어떤 사람은 새로 MySQL 설치해서 사용하고... 하는 방식이 좋아보이지는 않았아서 3307, 3308, 3309... 등 port 번호를 바꿔가며 여러개의 MySQL서버 container 로컬에서 띄워서 해결했었다.
+현재 내 컴퓨터에는 사이드 프로젝트에 의해 MySQL 서버 2개가 필요했다. 하나의 로컬 MySQL서버에 database를 나눠서 진행해도 상관없으나, 기본적으로 모든 곳에서 동일하게 셋팅되어야할 개발환경인데, 어떤 사람은 database만 나눠서 셋팅하고, 어떤 사람은 새로 MySQL 설치해서 사용하고... 하는 방식이 좋아보이지는 않았아서 3307, 3308, 3309... 등 port 번호를 바꿔가며 여러개의 MySQL서버 container 로컬에서 띄워서 해결했었다.
 
 잘못셋팅해도 그냥 container를 날리고 다시 이미지를 빌드하여 container로 띄우면 초기화도 쉽다. 평소에 쓰면서도 아주 강력한 기능인 것이 느껴졌는데, 과연 내가 이러한 기술에 대해서는 잘 모른다는게 느껴져서... 깊게 공부할 필요가 있다고 느껴졌던 것이다.
 
@@ -114,7 +113,7 @@ container는 OS자체를 실행시킬 필요가 없어서, VM보다 더 가볍�
 
 ## Linux Container 역사
 
-나는 container == docker 로만 이해하고 있었다. 그러나 좀 더 공부하게 되면서 생각보다 container의 역사는 오래됐음을 알게 됐는데, 짧게 요약해보도록 하겠다.
+나는 container == docker 로만 이해하고 있었다. 그러나 좀 더 공부하게 되면서 생각보다 container의 역사는 오래됐음을 알게 됐는데, 필요한 부분만 짧게 요약해보도록 하겠다.
 
 [해당 글](http://www.opennaru.com/openshift/container/history-of-the-container/)에 설명이 상세하게 잘 되어 있으니 참고하자.
 
@@ -127,73 +126,52 @@ container는 OS자체를 실행시킬 필요가 없어서, VM보다 더 가볍�
 - chroot : 하나의 filesystem에서 프로세스와 그 자식 프로세스의 root directory를 바꿀 수 있도록 해주는 system call
 - chroot는 1982년에 `BSD` 에도 추가됨
 
+`chroot` 라는 리눅스 system call이 추가되었다는 부분에서 한번쯤 알아놓으면 좋을 것 같았다.
+
 ### 2000년 `FreeBSD Jails`
 
 - FreeBSD(Free Berkeley Software Distribution) : BSD UNIX로 알려진 캘리포니아 버클리 대학교에서 만들어진 오픈소스 운영체제. kernel만 개발하는 linux와는 다르게 windows, MacOS처럼 응용 소프트웨어도 포함하여 개발 및 배포를 진행한다.
 - `FreeBSD` 시스템의 보안을 강화하기 위해 사용된 툴이 바로 `FreeBSD Jail` 이다. 
 - `Jail` 이라고 불리는 공간에 프로세스를 격리한다. 그리고 이는 한 프로세스들의 집합의 root directory를 바꾸기 위해 사용되는 `chroot` 개념에서 만들어졌다. 그래서 당연하게도 격리된 밖의 다른 files이나 자원들에 접근이 불가능하기 때문에, 안정적인 환경을 구성할 수 있는 것이다.
 
-현재 포스팅에서는 `FreeBSD Jail` 에 대해서만 다룰 것이 아니기에, [해당 문서](https://docs.freebsd.org/en/books/handbook/jails/)를 참고하여 자세한 부분들은 나중에 확인해보자.
-
-### 2001년 Linux VServer
-
-`FreeBSD Jail`과 마찬가지로 컴퓨터 시스템에서 file systems, network addresses, memory과 같은 자원들을 구분해줄 수 있는 `Jail` 매커니즘이다. 
-
-### 2004년 Solaris Container
-
-- OS level의 가상화 기술을 제공
-- Solaris OS 에서는 기본적으로 `Solaris container`에 대한 manual page를 제공
-- `Zone` 이라는 것을 통해 하나의 OS 시스템 내에서 완벽히 분리된 가상의 서버들처럼 동작
-
-### 2005년 Open VZ (Open Virtuzzo)
-
-- OS level의 가상화 기술을 제공
-- 수정된 linux kernel로 가상화, 격리, 자원 관리, checkpointing 기술을 제공
+최초의 container 였다는 점에서... 선배님 대우 확실히 하기 위해 적어봤다.
 
 ### 2006년 Process Containers
 
 - 프로세스들의 자원사용(CPU, memory, Disk I/O, 네트워크 등)을 제한, 분배, 격리하기 위해 고안됨
 - 1년 후 **`Control Groups (CGroups)` 라는 이름으로 변경**되었고, 이는 linux kernel 2.6.24에 합쳐짐
-  - 향후 다룰 내용 매우 중요한 내용의 선조격
-  - 해당 기능으로 Linux에서 가상화라는 기능을 구현할 수 있도록 해주는 것
+
+`Control Group(CGroup)` 의 선조격 되는 기술이 나온 때이다. container의 리소스를 관리할 수 있도록 해주는 중요한 기술의 하나여서 눈여겨 보고 가자.
 
 ### 2008년 LXC
 
 - 최초의 Linux container 
 - Linux kernel을 따로 수정할 필요없이 `CGroups` 와 리눅스 `namespace`로 구현됨. 
 
-### 2011년 Warden
-
-- `LXC`를 사용하여 만들었으나 나중에는 자체적으로 구현한 것으로 대체.
-- daemon처럼 실행되어 어떤 OS에서라도 환경을 격리할 수 있고, Container 관리를 위한 API를 제공.
-- 전반적으로 여러 host들에 대한 container들을 관리하기 위해 client-server 모델로 개발되었다.
-- `Warden`은 `CGroups`, `namespaces`, 프로세스 life cycle 을 관리하는 기능까지 갖고 있다.
-
-### 2013년 LMCTFY
-
-- Let Me Contain That For You
-- Linux application container 기능을 제공하는 Google의 container 기술의 오픈소스 버전
-- `container aware` 라는 것으로 하위 컨테이너를 생성하고 관리를 할 수 있음.
-- Google이 LMCTFY 코어 개념을 Open Container Foundation의 일부인 `libcontainer`로 기여하기 시작하며 2015년에 배포가 종료됨.
+docker의 아버지..? 쯤 되어 보이는 linux container 기술의 등장. 초기 docker는 LXC를 잘 사용할 수 있도록 해주는 인터페이스였다.
 
 ### 2013년 Docker
 
 - 초기에는 LXC 사용했으나 향후 변경됨.
 - docker가 나오면서 컨테이너가 폭발적으로 인기많아짐.
 
+<br>
 
+docker container가 딱! 하고 나타난줄 알았는데, docker가 탄생하기까지 생각보다 꽤나 오랜 시간동안 컨테이너화의 역사가 있었다는 사실에 놀랐다. 이 기술을 정확히 이해하고 내 것으로 만들기 위해서는 꽤나 많은 노력이 필요할 듯 하다.
 
-그 외에도 엄청 많은데.. 일단은 여기까지 보도록 하겠다. 궁금한 경우 위에서 소개한 링크를 확인하면 된다.
-
-일단 Docker에 대해서는 향후 깊게 다룰 것이고... 여기서 얻어가야할 부분이란 컨테이너는 역사가 나름 있었고, 어떤 식으로 발전하였는지를 확인하는 것이다.
-
-
+<br>
 
 ## Next
 
-컨테이너가 무엇이고 어떤 장점을 가지며 VM과는 어떤 차이가 있는지, 그리고 그 발전의 역사에 대해 아주 조금 살펴보았다.
+이번에는 컨테이너가 무엇이고 어떤 장점을 가지며 VM과는 어떤 차이가 있는지, 그리고 그 발전의 역사에 대해 아주 조금 살펴보았다. 역사가 긴 만큼 알아야할 지식도 많음을 깨달았는데, 오늘 공부한 것을 토대로 어떤 것들을 알아야할지 정리해보자.
 
-다음번에는 Docker에 대해서 자세히 알아보도록 하자.
+1. linux
+   1. Control Group
+   2. namespaces
+   3. file systems
+2. Docker
+
+생각보다 모르고 있던 알아야할 개념들이 많다. 하나씩 보도록 하자...
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker 좀 치나요?"
+title: "Docker 뭐 좀 되나요?"
 author: "xi-jjun"
 tags: Study Container Linux
 

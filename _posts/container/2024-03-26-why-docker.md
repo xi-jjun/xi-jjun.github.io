@@ -2,7 +2,7 @@
 layout: post
 title: "Docker 뭐 좀 되나요?"
 author: "xi-jjun"
-tags: Study Container Linux
+tags: Study Container Linux Docker
 
 
 ---
